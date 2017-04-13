@@ -27,3 +27,9 @@
 *.exe
 *.out
 *.app
+
+
+# Stuff I dont want from the ide
+.idea/
+*.iml
+*.xml

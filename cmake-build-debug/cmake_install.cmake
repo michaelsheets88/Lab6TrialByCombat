@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/sheetsmj/ClionProjects/Wumpus
+# Install script for directory: D:/MyDocs/Documents/CppProjects/TrialByCombat
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/sheetsmj/ClionProjects/Wumpus/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/MyDocs/Documents/CppProjects/TrialByCombat/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
