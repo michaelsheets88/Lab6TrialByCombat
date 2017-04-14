@@ -3,3 +3,7 @@
 //
 
 #include "Arrow.h"
+
+Arrow::Arrow(int arrowAmount) {
+    amount = arrowAmount;
+}

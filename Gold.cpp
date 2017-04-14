@@ -3,3 +3,8 @@
 //
 
 #include "Gold.h"
+
+Gold::Gold(int goldAmount) {
+    isShiny = true;
+    amount = goldAmount;
+}

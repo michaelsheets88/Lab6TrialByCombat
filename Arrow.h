@@ -5,10 +5,9 @@
 #ifndef WUMPUS_ARROW_H
 #define WUMPUS_ARROW_H
 
-
-class Arrow {
-
+class Arrow: public InventoryItem {
+public:
+    Arrow Arrow(int amount);
 };
-
 
 #endif //WUMPUS_ARROW_H

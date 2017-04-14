@@ -7,7 +7,17 @@
 
 
 class Room {
-
+public:
+    void printEntranceText();
+    bool hasBats();
+    bool hasWumpus();
+    bool hasHunter();
+    InventoryItem* getItems();
+    void setItem(InventoryItem *roomItem);
+    bool moveCharacterTo(Character *mover);
+private:
+    vector<Character*> currentCharacters;
+    Room Room();
 };
 
 
