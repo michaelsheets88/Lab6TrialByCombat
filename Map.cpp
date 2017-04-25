@@ -16,7 +16,7 @@ Room* Map::findRandomEmptyRoom() {
 void Map::populateGold() {
     // Add 10 gold to empty rooms
     for(int g = 0; g < maxGold; g++){
-        roomAt(r, c).setItem(new Gold());
+        findRandomEmptyRoom().setItem(new Gold());
     }
 }
 
@@ -30,7 +30,7 @@ void Map::populateArrows() {
 // Add 3 bats to empty rooms
 void Map::populateBats() {
     for(int b = 0; b < maxBats; b++){
-        findEmptyRoom().moveCharacterTo(new Bat());
+        findRandomEmptyRoom().moveCharacterTo(new Bat());
     }
 }
 
