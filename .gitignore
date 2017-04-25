@@ -33,3 +33,6 @@
 .idea/
 *.iml
 *.xml
+cmake-build-debug/CMakeFiles/CMakeTmp/
+cmake-build-debug/CMakeFiles/Wumpus.dir/CXX.includecache
+cmake-build-debug/CMakeFiles/Wumpus.dir/depend.internal

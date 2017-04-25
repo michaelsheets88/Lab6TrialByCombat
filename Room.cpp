@@ -3,3 +3,24 @@
 //
 
 #include "Room.h"
+
+Room Room::Room() {
+    itemInRoom = nullptr;
+    currentCharacters.clear();
+}
+
+void Room::setItem() {
+    itemInRoom = nullptr;
+}
+
+void Room::setItem(InventoryItem *roomItem) {
+    itemInRoom = roomItem;
+}
+
+bool Room::hasItem(){
+    return itemInRoom != nullptr;
+}
+
+bool Room::hasCharacter() {
+    return !currentCharacters.empty();
+}
