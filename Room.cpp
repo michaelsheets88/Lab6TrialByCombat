@@ -30,5 +30,5 @@ bool Room::moveCharacterTo(Character* mover){
 }
 
 bool Room::moveCharacterFrom(Character *mover) {
-
+    // Remove mover from currentCharacters
 }
