@@ -5,7 +5,6 @@
 #ifndef WUMPUS_MAP_H
 #define WUMPUS_MAP_H
 
-
 #include "Room.h"
 #include "Hunter.h"
 
@@ -18,20 +17,21 @@ const static int maxBats = 3;
 class Map {
 public:
     bool canMoveTo(Room* proposedRoom);
+    bool moveCharacterTo(Character *mover);
     void printMapState();
     Room* roomAt(int row, int column);
-    Map* map(Hunter* playerCharacter);
+    Room* currentPlayerRoom;
+    Room* currentWumpusRoom;
     Map();
-
 private:
     Room* rooms[mapRows][mapColumns];
-    //Helper methods
     Room* findRandomEmptyRoom();
     void populateBats();
     void populateArrows();
     void populateGold();
+    void populateTrap();
     void populateWumpus();
-    void populateHunter(Hunter* player);
+    void populateHunter();
 
 };
 

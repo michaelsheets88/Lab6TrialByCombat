@@ -33,3 +33,4 @@
 .idea/
 *.iml
 *.xml
+cmake-build-debug/CMakeFiles/CMakeTmp/

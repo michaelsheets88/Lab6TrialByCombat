@@ -8,6 +8,7 @@
 class InventoryItem {
 public:
     int amount;
+    InventoryItem(int initialAmount) : amount(initialAmount){};
 };
 
 #endif //WUMPUS_INVENTORYITEM_H

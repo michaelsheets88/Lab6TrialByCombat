@@ -4,6 +4,4 @@
 
 #include "Gold.h"
 
-Gold::Gold(int goldAmount) {
-    amount = goldAmount;
-}
+Gold::Gold(int initialAmount) : InventoryItem(initialAmount) {}

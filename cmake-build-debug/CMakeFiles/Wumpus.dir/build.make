@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\MyDocs\Documents\CppProjects\TrialByCombat
+CMAKE_SOURCE_DIR = D:\MyDocs\Documents\Lab6TrialByCombat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\MyDocs\Documents\CppProjects\TrialByCombat\cmake-build-debug
+CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Wumpus.dir/depend.make
@@ -58,16 +58,16 @@ include CMakeFiles/Wumpus.dir/flags.make
 
 CMakeFiles/Wumpus.dir/main.cpp.obj: CMakeFiles/Wumpus.dir/flags.make
 CMakeFiles/Wumpus.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\CppProjects\TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Wumpus.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\main.cpp.obj -c D:\MyDocs\Documents\CppProjects\TrialByCombat\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Wumpus.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\main.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp
 
 CMakeFiles/Wumpus.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wumpus.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\CppProjects\TrialByCombat\main.cpp > CMakeFiles\Wumpus.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp > CMakeFiles\Wumpus.dir\main.cpp.i
 
 CMakeFiles/Wumpus.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wumpus.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\CppProjects\TrialByCombat\main.cpp -o CMakeFiles\Wumpus.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp -o CMakeFiles\Wumpus.dir\main.cpp.s
 
 CMakeFiles/Wumpus.dir/main.cpp.obj.requires:
 
@@ -80,19 +80,45 @@ CMakeFiles/Wumpus.dir/main.cpp.obj.provides: CMakeFiles/Wumpus.dir/main.cpp.obj.
 CMakeFiles/Wumpus.dir/main.cpp.obj.provides.build: CMakeFiles/Wumpus.dir/main.cpp.obj
 
 
+CMakeFiles/Wumpus.dir/Trap.cpp.obj: CMakeFiles/Wumpus.dir/flags.make
+CMakeFiles/Wumpus.dir/Trap.cpp.obj: ../Trap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Wumpus.dir/Trap.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\Trap.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp
+
+CMakeFiles/Wumpus.dir/Trap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wumpus.dir/Trap.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp > CMakeFiles\Wumpus.dir\Trap.cpp.i
+
+CMakeFiles/Wumpus.dir/Trap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wumpus.dir/Trap.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp -o CMakeFiles\Wumpus.dir\Trap.cpp.s
+
+CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires:
+
+.PHONY : CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires
+
+CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides: CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides.build
+.PHONY : CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides
+
+CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides.build: CMakeFiles/Wumpus.dir/Trap.cpp.obj
+
+
 # Object files for target Wumpus
 Wumpus_OBJECTS = \
-"CMakeFiles/Wumpus.dir/main.cpp.obj"
+"CMakeFiles/Wumpus.dir/main.cpp.obj" \
+"CMakeFiles/Wumpus.dir/Trap.cpp.obj"
 
 # External object files for target Wumpus
 Wumpus_EXTERNAL_OBJECTS =
 
 Wumpus.exe: CMakeFiles/Wumpus.dir/main.cpp.obj
+Wumpus.exe: CMakeFiles/Wumpus.dir/Trap.cpp.obj
 Wumpus.exe: CMakeFiles/Wumpus.dir/build.make
 Wumpus.exe: CMakeFiles/Wumpus.dir/linklibs.rsp
 Wumpus.exe: CMakeFiles/Wumpus.dir/objects1.rsp
 Wumpus.exe: CMakeFiles/Wumpus.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\MyDocs\Documents\CppProjects\TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Wumpus.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Wumpus.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Wumpus.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -101,6 +127,7 @@ CMakeFiles/Wumpus.dir/build: Wumpus.exe
 .PHONY : CMakeFiles/Wumpus.dir/build
 
 CMakeFiles/Wumpus.dir/requires: CMakeFiles/Wumpus.dir/main.cpp.obj.requires
+CMakeFiles/Wumpus.dir/requires: CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires
 
 .PHONY : CMakeFiles/Wumpus.dir/requires
 
@@ -109,6 +136,6 @@ CMakeFiles/Wumpus.dir/clean:
 .PHONY : CMakeFiles/Wumpus.dir/clean
 
 CMakeFiles/Wumpus.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\MyDocs\Documents\CppProjects\TrialByCombat D:\MyDocs\Documents\CppProjects\TrialByCombat D:\MyDocs\Documents\CppProjects\TrialByCombat\cmake-build-debug D:\MyDocs\Documents\CppProjects\TrialByCombat\cmake-build-debug D:\MyDocs\Documents\CppProjects\TrialByCombat\cmake-build-debug\CMakeFiles\Wumpus.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles\Wumpus.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Wumpus.dir/depend
 

@@ -18,6 +18,7 @@ public:
     bool hasBats();
     bool hasWumpus();
     bool hasHunter();
+    bool hasTrap();
     bool hasItem();
     InventoryItem* getItems();
     void setItem(InventoryItem *roomItem);

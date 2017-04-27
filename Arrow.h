@@ -9,7 +9,7 @@
 
 class Arrow: public InventoryItem {
 public:
-    Arrow(int amount);
+    Arrow(int initialAmount);
 };
 
 #endif //WUMPUS_ARROW_H

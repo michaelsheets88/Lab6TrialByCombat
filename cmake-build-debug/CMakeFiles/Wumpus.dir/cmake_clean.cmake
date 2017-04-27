@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Wumpus.dir/main.cpp.obj"
+  "CMakeFiles/Wumpus.dir/Trap.cpp.obj"
   "Wumpus.pdb"
   "Wumpus.exe"
   "Wumpus.exe.manifest"

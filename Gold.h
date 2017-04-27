@@ -9,7 +9,7 @@
 
 class Gold: public InventoryItem {
 public:
-    Gold(int goldAmount);
+    Gold(int initialAmount);
 };
 
 #endif //WUMPUS_GOLD_H

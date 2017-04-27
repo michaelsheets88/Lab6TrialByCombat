@@ -9,6 +9,8 @@
 #include "Arrow.h"
 #include "Bat.h"
 #include "Wumpus.h"
+#include "Trap.h"
+#include "Hunter.h"
 
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
@@ -34,6 +36,11 @@ void Map::populateArrows() {
     }
 }
 
+// Add Trap to empty room
+void Map::populateTrap(){
+    findRandomEmptyRoom()->setItem(new Trap());
+}
+
 // Add 3 bats to empty rooms
 void Map::populateBats() {
     for(int b = 0; b < maxBats; b++){
@@ -41,8 +48,8 @@ void Map::populateBats() {
     }
 }
 
-void Map::populateHunter(Hunter* player) {
-    findRandomEmptyRoom()->moveCharacterTo(player);
+void Map::populateHunter() {
+    moveCharacterTo(new Hunter();
 }
 
 void Map::populateWumpus() {
@@ -54,7 +61,6 @@ void Map::populateWumpus() {
 // It will create a map of many rooms, then
 // populate bats, items, player, and wumpus.
 Map::Map(){
-    // Create map of empty rooms
     for(int r = 0; r < mapRows; r++){
         for(int c = 0; c < mapColumns; c++){
             rooms[r][c] = new Room();
@@ -63,13 +69,21 @@ Map::Map(){
     populateGold();
     populateBats();
     populateArrows();
+    populateTrap();
     populateWumpus();
+    populateHunter();
 }
 
 Room* Map::roomAt(int row, int column) {
     return rooms[row][column];
 }
 
-
-
-
+bool Map::moveCharacterTo(Character *mover){
+    if(mover->name == badGuyName){
+//        Do bad stuff
+    } else if(mover->name == goodGuyName){
+//        Do heroic stuff
+    } else if(mover->name == batName){
+//        Do bat things( nananananananananananna )
+    }
+}
