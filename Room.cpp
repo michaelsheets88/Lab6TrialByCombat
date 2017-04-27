@@ -26,5 +26,9 @@ bool Room::hasCharacter() {
 }
 
 bool Room::moveCharacterTo(Character* mover){
+    currentCharacters.push_back(mover);
+}
 
-};
+bool Room::moveCharacterFrom(Character *mover) {
+
+}

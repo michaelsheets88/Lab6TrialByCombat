@@ -24,7 +24,7 @@ public:
     void setItem(InventoryItem *roomItem);
     void setItem();
     bool moveCharacterTo(Character* mover);
-
+    bool moveCharacterFrom(Character* mover);
     Room();
 
 private:

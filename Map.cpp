@@ -78,12 +78,18 @@ Room* Map::roomAt(int row, int column) {
     return rooms[row][column];
 }
 
-bool Map::moveCharacterTo(Character *mover){
+bool Map::moveCharacterTo(Character *mover, Room *newRoom){
     if(mover->name == badGuyName){
 //        Do bad stuff
+        newRoom->moveCharacterTo(mover->name);
+
     } else if(mover->name == goodGuyName){
 //        Do heroic stuff
+        newRoom->moveCharacterTo(mover->name);
+
     } else if(mover->name == batName){
+        newRoom->moveCharacterTo(mover->name);
+
 //        Do bat things( nananananananananananna )
     }
 }

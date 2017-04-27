@@ -17,7 +17,7 @@ const static int maxBats = 3;
 class Map {
 public:
     bool canMoveTo(Room* proposedRoom);
-    bool moveCharacterTo(Character *mover);
+    bool moveCharacterTo(Character *mover, Room *newRoom);
     void printMapState();
     Room* roomAt(int row, int column);
     Room* currentPlayerRoom;
