@@ -19,7 +19,7 @@ public:
     void printMapState();
     Room* roomAt(int row, int column);
     Map* map(Hunter* playerCharacter);
-    Map::Map();
+    Map();
 private:
     Room* rooms[mapRows][mapColumns];
     //Helper methods

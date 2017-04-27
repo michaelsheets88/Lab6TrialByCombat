@@ -8,12 +8,12 @@
 
 #include "Character.h"
 
-class Wumpus: Character {
+class Wumpus:public Character {
 public:
     bool kill();
     void wakeUp();
 
-    Wumpus(Map* currentMap, Room*currentRoom):Character(false,currentMap,currentRoom){
+    Wumpus():Character(false){
 
     };
 };

@@ -8,8 +8,6 @@ int gameLoop();
 
 void highScoreSequence(int score);
 
-void displayEndMessage();
-
 void displayOpeningOptions();
 
 bool handleOpeningInput();
@@ -25,6 +23,8 @@ void setUpGame();
 void displayErrorMessage(char input);
 
 string determineInfoString();
+
+void displayEndMessage();
 
 int const NOT_DONE = -2;
 int const LOST = -1;

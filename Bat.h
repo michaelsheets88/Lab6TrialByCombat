@@ -6,13 +6,14 @@
 #define WUMPUS_BATS_H
 
 
-#include "Character.h"
 
-class Bat : Character{
+#include "Room.h"
+
+class Bat : public Character{
 private:
     Room* roomToMoveTo;
 public:
-    Bat(Map* currentMap, Room* currentRoom, Room* roomToMoveTo):Character(false,currentMap,currentRoom){
+    Bat(Room* roomToMoveTo):Character(false){
         this->roomToMoveTo = roomToMoveTo;
     };
 };

@@ -37,7 +37,7 @@ void Map::populateArrows() {
 // Add 3 bats to empty rooms
 void Map::populateBats() {
     for(int b = 0; b < maxBats; b++){
-        new Bat(this,findRandomEmptyRoom(),findRandomEmptyRoom());
+        new Bat(findRandomEmptyRoom());
     }
 }
 
@@ -46,7 +46,7 @@ void Map::populateHunter(Hunter* player) {
 }
 
 void Map::populateWumpus() {
-    new Wumpus(this,findRandomEmptyRoom());
+    new Wumpus();
 }
 
 

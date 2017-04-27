@@ -4,7 +4,7 @@
 
 #include "Room.h"
 
-Room Room::Room() {
+Room::Room() {
     itemInRoom = nullptr;
     currentCharacters.clear();
 }

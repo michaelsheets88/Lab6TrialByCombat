@@ -10,15 +10,15 @@
 #include "Room.h"
 #include "Character.h"
 
-class Hunter: Character {
+class Hunter: public Character {
 private:
-    const int NUMBER_OF_ITEMS = 2;
+    static const int NUMBER_OF_ITEMS = 2;
     InventoryItem inventory[NUMBER_OF_ITEMS];
 public:
     void pickUp();
     bool shootArrow(Room *targetRoom);
 
-    Hunter(Map* currentMap, Room* currentRoom): Character(true, currentMap, currentRoom){
+    Hunter(): Character(true){
 
     };
 };
