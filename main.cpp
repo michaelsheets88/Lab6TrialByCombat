@@ -95,7 +95,8 @@ void displayInstructions() {
          "find the Gold the Wumpus has been hoarding and avoid Bats, who will\n" <<
          "will steal some of your gold if they find you.\n" <<
          "Find the Wumpus, shoot an arrow at him and you win, escaping with your gold.\n" <<
-         "But if you wake him up and he finds you first, then your gold, and life, are forfeit\n";
+         "But if you wake him up by going into the same room as him and he finds "
+                 "you first, then your gold, and life, are forfeit\n";
 }
 
 void setUpGame() {
@@ -124,5 +125,9 @@ void displayGameOptions() {
 
 string determineInfoString() {
     return "Info will be provided when implemented";
+}
+
+void displayEndMessage(){
+
 }
 

@@ -7,7 +7,6 @@
 
 
 #include "InventoryItem.h"
-#include "Room.h"
 #include "Character.h"
 
 class Hunter: public Character {
@@ -16,7 +15,6 @@ private:
     InventoryItem inventory[NUMBER_OF_ITEMS];
 public:
     void pickUp();
-    bool shootArrow(Room *targetRoom);
 
     Hunter(): Character(true){
 

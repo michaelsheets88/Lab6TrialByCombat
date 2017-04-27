@@ -24,3 +24,7 @@ bool Room::hasItem(){
 bool Room::hasCharacter() {
     return !currentCharacters.empty();
 }
+
+bool Room::moveCharacterTo(Character* mover){
+
+};

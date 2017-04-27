@@ -22,7 +22,7 @@ public:
     InventoryItem* getItems();
     void setItem(InventoryItem *roomItem);
     void setItem();
-    bool moveCharacterTo(Character *mover);
+    bool moveCharacterTo(Character* mover);
 
     Room();
 

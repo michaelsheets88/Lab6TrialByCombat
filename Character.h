@@ -10,7 +10,9 @@ class Character {
 protected:
     bool canMove;
 public:
-    Character(bool canMove);
+    Character(bool canMove){
+
+    };
 };
 
 

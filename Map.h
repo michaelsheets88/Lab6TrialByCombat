@@ -5,6 +5,8 @@
 #ifndef WUMPUS_MAP_H
 #define WUMPUS_MAP_H
 
+
+#include "Room.h"
 #include "Hunter.h"
 
 const static int mapColumns = 6;
@@ -20,6 +22,7 @@ public:
     Room* roomAt(int row, int column);
     Map* map(Hunter* playerCharacter);
     Map();
+
 private:
     Room* rooms[mapRows][mapColumns];
     //Helper methods
