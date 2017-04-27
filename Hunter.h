@@ -6,8 +6,21 @@
 #define WUMPUS_HUNTER_H
 
 
-class Hunter {
+#include "InventoryItem.h"
+#include "Room.h"
+#include "Character.h"
 
+class Hunter: Character {
+private:
+    const int NUMBER_OF_ITEMS = 2;
+    InventoryItem inventory[NUMBER_OF_ITEMS];
+public:
+    void pickUp();
+    bool shootArrow(Room *targetRoom);
+
+    Hunter(Map* currentMap, Room* currentRoom): Character(true, currentMap, currentRoom){
+
+    };
 };
 
 

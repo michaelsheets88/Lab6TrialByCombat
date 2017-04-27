@@ -6,8 +6,16 @@
 #define WUMPUS_WUMPUS_H
 
 
-class Wumpus {
+#include "Character.h"
 
+class Wumpus: Character {
+public:
+    bool kill();
+    void wakeUp();
+
+    Wumpus(Map* currentMap, Room*currentRoom):Character(false,currentMap,currentRoom){
+
+    };
 };
 
 
