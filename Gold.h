@@ -5,9 +5,11 @@
 #ifndef WUMPUS_GOLD_H
 #define WUMPUS_GOLD_H
 
+#include "InventoryItem.h"
+
 class Gold: public InventoryItem {
 public:
-    Gold Gold(int goldAmount);
+    Gold(int goldAmount);
 };
 
 #endif //WUMPUS_GOLD_H

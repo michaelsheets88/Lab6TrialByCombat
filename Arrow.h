@@ -5,9 +5,11 @@
 #ifndef WUMPUS_ARROW_H
 #define WUMPUS_ARROW_H
 
+#include "InventoryItem.h"
+
 class Arrow: public InventoryItem {
 public:
-    Arrow Arrow(int amount);
+    Arrow(int amount);
 };
 
 #endif //WUMPUS_ARROW_H

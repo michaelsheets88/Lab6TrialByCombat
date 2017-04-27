@@ -6,6 +6,11 @@
 #define WUMPUS_ROOM_H
 
 
+#include <vector>
+#include "InventoryItem.h"
+#include "Character.h"
+
+
 class Room {
 public:
     void printEntranceText();
@@ -18,10 +23,12 @@ public:
     void setItem(InventoryItem *roomItem);
     void setItem();
     bool moveCharacterTo(Character *mover);
+
+    Room();
+
 private:
     InventoryItem *itemInRoom;
-    vector<Character*> currentCharacters;
-    Room Room();
+    std::vector<Character*> currentCharacters;
 };
 
 

@@ -5,6 +5,8 @@
 #ifndef WUMPUS_MAP_H
 #define WUMPUS_MAP_H
 
+#include "Hunter.h"
+
 const static int mapColumns = 6;
 const static int mapRows = 6;
 const static int maxGold = 10;
@@ -17,8 +19,9 @@ public:
     void printMapState();
     Room* roomAt(int row, int column);
     Map* map(Hunter* playerCharacter);
+    Map::Map();
 private:
-    Room rooms[mapRows][mapColumns];
+    Room* rooms[mapRows][mapColumns];
     //Helper methods
     Room* findRandomEmptyRoom();
     void populateBats();
@@ -26,6 +29,7 @@ private:
     void populateGold();
     void populateWumpus();
     void populateHunter(Hunter* player);
+
 };
 
 #endif //WUMPUS_MAP_H
