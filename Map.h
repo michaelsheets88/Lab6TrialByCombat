@@ -6,7 +6,7 @@
 #define WUMPUS_MAP_H
 
 #include "Room.h"
-#include "Hunter.h"
+#include "Child.h"
 
 // Just some constants so we don't have numbers all up in our code.
 const static int mapColumns = 6;

@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Wumpus
+# Target rules for targets named Dad
 
 # Build rule for target.
-Wumpus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 Wumpus
-.PHONY : Wumpus
+Dad: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Dad
+.PHONY : Dad
 
 # fast build rule for target.
-Wumpus/fast:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/build
-.PHONY : Wumpus/fast
+Dad/fast:
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/build
+.PHONY : Dad/fast
 
 Trap.obj: Trap.cpp.obj
 
@@ -128,7 +128,7 @@ Trap.obj: Trap.cpp.obj
 
 # target to build an object file
 Trap.cpp.obj:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Trap.cpp.obj
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/Trap.cpp.obj
 .PHONY : Trap.cpp.obj
 
 Trap.i: Trap.cpp.i
@@ -137,7 +137,7 @@ Trap.i: Trap.cpp.i
 
 # target to preprocess a source file
 Trap.cpp.i:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Trap.cpp.i
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/Trap.cpp.i
 .PHONY : Trap.cpp.i
 
 Trap.s: Trap.cpp.s
@@ -146,7 +146,7 @@ Trap.s: Trap.cpp.s
 
 # target to generate assembly for a file
 Trap.cpp.s:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Trap.cpp.s
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/Trap.cpp.s
 .PHONY : Trap.cpp.s
 
 main.obj: main.cpp.obj
@@ -155,7 +155,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -164,7 +164,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -173,7 +173,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -183,7 +183,7 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... Wumpus
+	@echo ... Dad
 	@echo ... rebuild_cache
 	@echo ... Trap.obj
 	@echo ... Trap.i

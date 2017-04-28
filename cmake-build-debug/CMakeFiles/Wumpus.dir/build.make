@@ -48,94 +48,94 @@ CMAKE_SOURCE_DIR = D:\MyDocs\Documents\Lab6TrialByCombat
 CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
 
 # Include any dependencies generated for this target.
-include CMakeFiles/Wumpus.dir/depend.make
+include CMakeFiles/Dad.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/Wumpus.dir/progress.make
+include CMakeFiles/Dad.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/Wumpus.dir/flags.make
+include CMakeFiles/Dad.dir/flags.make
 
-CMakeFiles/Wumpus.dir/main.cpp.obj: CMakeFiles/Wumpus.dir/flags.make
-CMakeFiles/Wumpus.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Wumpus.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\main.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp
+CMakeFiles/Dad.dir/main.cpp.obj: CMakeFiles/Dad.dir/flags.make
+CMakeFiles/Dad.dir/main.cpp.obj: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Dad.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dad.dir\main.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp
 
-CMakeFiles/Wumpus.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wumpus.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp > CMakeFiles\Wumpus.dir\main.cpp.i
+CMakeFiles/Dad.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Dad.dir/main.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp > CMakeFiles\Dad.dir\main.cpp.i
 
-CMakeFiles/Wumpus.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wumpus.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp -o CMakeFiles\Wumpus.dir\main.cpp.s
+CMakeFiles/Dad.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Dad.dir/main.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp -o CMakeFiles\Dad.dir\main.cpp.s
 
-CMakeFiles/Wumpus.dir/main.cpp.obj.requires:
+CMakeFiles/Dad.dir/main.cpp.obj.requires:
 
-.PHONY : CMakeFiles/Wumpus.dir/main.cpp.obj.requires
+.PHONY : CMakeFiles/Dad.dir/main.cpp.obj.requires
 
-CMakeFiles/Wumpus.dir/main.cpp.obj.provides: CMakeFiles/Wumpus.dir/main.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/main.cpp.obj.provides.build
-.PHONY : CMakeFiles/Wumpus.dir/main.cpp.obj.provides
+CMakeFiles/Dad.dir/main.cpp.obj.provides: CMakeFiles/Dad.dir/main.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/main.cpp.obj.provides.build
+.PHONY : CMakeFiles/Dad.dir/main.cpp.obj.provides
 
-CMakeFiles/Wumpus.dir/main.cpp.obj.provides.build: CMakeFiles/Wumpus.dir/main.cpp.obj
-
-
-CMakeFiles/Wumpus.dir/Trap.cpp.obj: CMakeFiles/Wumpus.dir/flags.make
-CMakeFiles/Wumpus.dir/Trap.cpp.obj: ../Trap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Wumpus.dir/Trap.cpp.obj"
-	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\Trap.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp
-
-CMakeFiles/Wumpus.dir/Trap.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wumpus.dir/Trap.cpp.i"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp > CMakeFiles\Wumpus.dir\Trap.cpp.i
-
-CMakeFiles/Wumpus.dir/Trap.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wumpus.dir/Trap.cpp.s"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp -o CMakeFiles\Wumpus.dir\Trap.cpp.s
-
-CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires:
-
-.PHONY : CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires
-
-CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides: CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides.build
-.PHONY : CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides
-
-CMakeFiles/Wumpus.dir/Trap.cpp.obj.provides.build: CMakeFiles/Wumpus.dir/Trap.cpp.obj
+CMakeFiles/Dad.dir/main.cpp.obj.provides.build: CMakeFiles/Dad.dir/main.cpp.obj
 
 
-# Object files for target Wumpus
+CMakeFiles/Dad.dir/Trap.cpp.obj: CMakeFiles/Dad.dir/flags.make
+CMakeFiles/Dad.dir/Trap.cpp.obj: ../Trap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Dad.dir/Trap.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Dad.dir\Trap.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp
+
+CMakeFiles/Dad.dir/Trap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Dad.dir/Trap.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp > CMakeFiles\Dad.dir\Trap.cpp.i
+
+CMakeFiles/Dad.dir/Trap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Dad.dir/Trap.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\Trap.cpp -o CMakeFiles\Dad.dir\Trap.cpp.s
+
+CMakeFiles/Dad.dir/Trap.cpp.obj.requires:
+
+.PHONY : CMakeFiles/Dad.dir/Trap.cpp.obj.requires
+
+CMakeFiles/Dad.dir/Trap.cpp.obj.provides: CMakeFiles/Dad.dir/Trap.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/Trap.cpp.obj.provides.build
+.PHONY : CMakeFiles/Dad.dir/Trap.cpp.obj.provides
+
+CMakeFiles/Dad.dir/Trap.cpp.obj.provides.build: CMakeFiles/Dad.dir/Trap.cpp.obj
+
+
+# Object files for target Dad
 Wumpus_OBJECTS = \
-"CMakeFiles/Wumpus.dir/main.cpp.obj" \
-"CMakeFiles/Wumpus.dir/Trap.cpp.obj"
+"CMakeFiles/Dad.dir/main.cpp.obj" \
+"CMakeFiles/Dad.dir/Trap.cpp.obj"
 
-# External object files for target Wumpus
+# External object files for target Dad
 Wumpus_EXTERNAL_OBJECTS =
 
-Wumpus.exe: CMakeFiles/Wumpus.dir/main.cpp.obj
-Wumpus.exe: CMakeFiles/Wumpus.dir/Trap.cpp.obj
-Wumpus.exe: CMakeFiles/Wumpus.dir/build.make
-Wumpus.exe: CMakeFiles/Wumpus.dir/linklibs.rsp
-Wumpus.exe: CMakeFiles/Wumpus.dir/objects1.rsp
-Wumpus.exe: CMakeFiles/Wumpus.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Wumpus.exe"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Wumpus.dir\link.txt --verbose=$(VERBOSE)
+Dad.exe: CMakeFiles/Dad.dir/main.cpp.obj
+Dad.exe: CMakeFiles/Dad.dir/Trap.cpp.obj
+Dad.exe: CMakeFiles/Dad.dir/build.make
+Dad.exe: CMakeFiles/Dad.dir/linklibs.rsp
+Dad.exe: CMakeFiles/Dad.dir/objects1.rsp
+Dad.exe: CMakeFiles/Dad.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Dad.exe"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Dad.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Wumpus.dir/build: Wumpus.exe
+CMakeFiles/Dad.dir/build: Dad.exe
 
-.PHONY : CMakeFiles/Wumpus.dir/build
+.PHONY : CMakeFiles/Dad.dir/build
 
-CMakeFiles/Wumpus.dir/requires: CMakeFiles/Wumpus.dir/main.cpp.obj.requires
-CMakeFiles/Wumpus.dir/requires: CMakeFiles/Wumpus.dir/Trap.cpp.obj.requires
+CMakeFiles/Dad.dir/requires: CMakeFiles/Dad.dir/main.cpp.obj.requires
+CMakeFiles/Dad.dir/requires: CMakeFiles/Dad.dir/Trap.cpp.obj.requires
 
-.PHONY : CMakeFiles/Wumpus.dir/requires
+.PHONY : CMakeFiles/Dad.dir/requires
 
-CMakeFiles/Wumpus.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles\Wumpus.dir\cmake_clean.cmake
-.PHONY : CMakeFiles/Wumpus.dir/clean
+CMakeFiles/Dad.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles\Dad.dir\cmake_clean.cmake
+.PHONY : CMakeFiles/Dad.dir/clean
 
-CMakeFiles/Wumpus.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles\Wumpus.dir\DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/Wumpus.dir/depend
+CMakeFiles/Dad.dir/depend:
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles\Dad.dir\DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/Dad.dir/depend
 

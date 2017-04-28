@@ -9,9 +9,9 @@
 
 using namespace std;
 
-const static string badGuyName = "Wumpus";
-const static string goodGuyName = "Hunter";
-const static string batName = "Bat";
+const static string badGuyName = "Dad";
+const static string goodGuyName = "Child";
+const static string batName = "AirVent";
 
 class Character {
 protected:

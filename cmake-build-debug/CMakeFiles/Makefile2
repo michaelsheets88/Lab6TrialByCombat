@@ -59,39 +59,39 @@ CMAKE_SOURCE_DIR = D:\MyDocs\Documents\Lab6TrialByCombat
 CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Wumpus.dir
+# Target rules for target CMakeFiles/Dad.dir
 
 # All Build rule for target.
-CMakeFiles/Wumpus.dir/all:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/depend
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Wumpus"
-.PHONY : CMakeFiles/Wumpus.dir/all
+CMakeFiles/Dad.dir/all:
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/depend
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Dad"
+.PHONY : CMakeFiles/Dad.dir/all
 
 # Include target in all.
-all: CMakeFiles/Wumpus.dir/all
+all: CMakeFiles/Dad.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Wumpus.dir/rule: cmake_check_build_system
+CMakeFiles/Dad.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 3
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Wumpus.dir/all
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Dad.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/Wumpus.dir/rule
+.PHONY : CMakeFiles/Dad.dir/rule
 
 # Convenience name for target.
-Wumpus: CMakeFiles/Wumpus.dir/rule
+Dad: CMakeFiles/Dad.dir/rule
 
-.PHONY : Wumpus
-
-# clean rule for target.
-CMakeFiles/Wumpus.dir/clean:
-	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/clean
-.PHONY : CMakeFiles/Wumpus.dir/clean
+.PHONY : Dad
 
 # clean rule for target.
-clean: CMakeFiles/Wumpus.dir/clean
+CMakeFiles/Dad.dir/clean:
+	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/clean
+.PHONY : CMakeFiles/Dad.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Dad.dir/clean
 
 .PHONY : clean
 

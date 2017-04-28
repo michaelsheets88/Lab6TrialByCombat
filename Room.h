@@ -14,7 +14,7 @@ class Room {
 public:
     bool hasCharacter();                            //Checks to see if the room has any Characters
     bool hasBats();                                 //Checks to see if the room has any bats
-    bool hasWumpus();                               //Checks the rooms for Wumpus
+    bool hasWumpus();                               //Checks the rooms for Dad
     bool hasHunter();                               //Checks the room for the hunter
     bool hasSetTrap();                              //Checks the room for a set Trap!  Oooooh dangerous!!
     bool hasItem();                                 //Checks for inventory items to pick up (only hunter)

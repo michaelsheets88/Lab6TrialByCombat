@@ -5,11 +5,11 @@
 
 #include <cstdlib>
 #include "Map.h"
-#include "Gold.h"
-#include "Arrow.h"
-#include "Bat.h"
-#include "Wumpus.h"
-#include "Trap.h"
+#include "Candy.h"
+#include "DirtyDaiper.h"
+#include "AirVent.h"
+#include "Dad.h"
+#include "Legos.h"
 
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
@@ -24,14 +24,14 @@ Room* Map::findRandomEmptyRoom() {
 void Map::populateGold() {
     // Add 10 gold to empty rooms
     for(int g = 0; g < maxGold; g++){
-        findRandomEmptyRoom()->setItem(new Gold(1));
+        findRandomEmptyRoom()->setItem(new Candy(1));
     }
 }
 
 void Map::populateArrows() {
     // Add 10 arrows to empty rooms
     for(int a = 0; a < maxArrow; a++){
-        findRandomEmptyRoom()->setItem(new Arrow(rand() % 3));
+        findRandomEmptyRoom()->setItem(new DirtyDaiper(rand() % 3));
     }
 }
 
@@ -43,16 +43,16 @@ void Map::populateTrap(){
 // Add 3 bats to empty rooms
 void Map::populateBats() {
     for(int b = 0; b < maxBats; b++){
-        new Bat(findRandomEmptyRoom());
+        new AirVent(findRandomEmptyRoom());
     }
 }
 
 void Map::populateHunter() {
-    moveCharacterTo(new Hunter(), new Room());
+    moveCharacterTo(new Child(), new Room());
 }
 
 void Map::populateWumpus() {
-    new Wumpus();
+    new Dad();
 }
 
 
