@@ -3,3 +3,5 @@
 //
 
 #include "Trap.h"
+
+Trap::Trap() : InventoryItem(trapLimit){}

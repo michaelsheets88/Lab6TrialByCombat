@@ -10,7 +10,6 @@
 #include "Bat.h"
 #include "Wumpus.h"
 #include "Trap.h"
-#include "Hunter.h"
 
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
@@ -49,7 +48,7 @@ void Map::populateBats() {
 }
 
 void Map::populateHunter() {
-    moveCharacterTo(new Hunter();
+    moveCharacterTo(new Hunter(), new Room());
 }
 
 void Map::populateWumpus() {
@@ -66,12 +65,12 @@ Map::Map(){
             rooms[r][c] = new Room();
         }
     }
+    populateHunter();
     populateGold();
     populateBats();
     populateArrows();
     populateTrap();
     populateWumpus();
-    populateHunter();
 }
 
 Room* Map::roomAt(int row, int column) {
