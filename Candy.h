@@ -7,9 +7,9 @@
 
 #include "InventoryItem.h"
 
-class Gold: public InventoryItem {
+class Candy: public InventoryItem {
 public:
-    Gold(int initialAmount);
+    Candy(int initialAmount);
 };
 
 #endif //WUMPUS_GOLD_H

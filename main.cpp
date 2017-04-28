@@ -90,13 +90,14 @@ void displayErrorMessage(char input) {
 }
 
 void displayInstructions() {
-    cout << "You are hunting a Wumpus inside a cave filled with gold and hazards.\n" <<
+    cout << "You are hunting a Dad inside a cave filled with gold and hazards.\n" <<
          "Use the commands presented to you to traverse through the cave and\n" <<
-         "find the Gold the Wumpus has been hoarding and avoid Bats, who will\n" <<
+         "find the Candy the Dad has been hoarding and avoid Bats, who will\n" <<
          "will steal some of your gold if they find you.\n" <<
-         "Find the Wumpus, shoot an arrow at him and you win, escaping with your gold.\n" <<
-         "But if you wake him up by going into the same room as him and he finds "
-                 "you first, then your gold, and life, are forfeit\n";
+         "Find the Dad, shoot an arrow at him or set a deadly trap\n"<<
+         "and you win, escaping with your gold.\n" <<
+         "But if you wake him up by going into the same room as him and he finds \n "<<
+         "you first, then your gold, and life, are forfeit\n";
 }
 
 void setUpGame() {

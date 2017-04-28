@@ -9,14 +9,14 @@
 #include "InventoryItem.h"
 #include "Character.h"
 
-class Hunter: public Character {
+class Child: public Character {
 private:
     static const int NUMBER_OF_ITEMS = 2;
     InventoryItem inventory[NUMBER_OF_ITEMS];
 public:
     void pickUp();
 
-    Hunter(): Character(true){
+    Child(): Character(true){
 
     };
 };

@@ -9,11 +9,11 @@
 
 #include "Room.h"
 
-class Bat : public Character{
+class AirVent : public Character{
 private:
     Room* roomToMoveTo;
 public:
-    Bat(Room* roomToMoveTo):Character(false){
+    AirVent(Room* roomToMoveTo):Character(false){
         this->roomToMoveTo = roomToMoveTo;
     };
 };

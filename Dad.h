@@ -8,12 +8,12 @@
 
 #include "Character.h"
 
-class Wumpus:public Character {
+class Dad:public Character {
 public:
     bool kill();
     void wakeUp();
 
-    Wumpus():Character(false){
+    Dad():Character(false){
 
     };
 };
