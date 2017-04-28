@@ -7,9 +7,9 @@
 
 #include "InventoryItem.h"
 
-class DirtyDaiper: public InventoryItem {
+class DirtyDiaper: public InventoryItem {
 public:
-    DirtyDaiper(int initialAmount);
+    DirtyDiaper(int initialAmount);
 };
 
 #endif //WUMPUS_ARROW_H

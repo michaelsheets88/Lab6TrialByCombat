@@ -11,9 +11,9 @@
 // Just some constants so we don't have numbers all up in our code.
 const static int mapColumns = 6;
 const static int mapRows = 6;
-const static int maxGold = 10;
-const static int maxArrow = 10;
-const static int maxBats = 3;
+const static int maxCandy = 10;
+const static int maxDiapers = 10;
+const static int maxVents = 3;
 
 class Map {
 public:
@@ -33,12 +33,11 @@ private:
     Room* findRandomEmptyRoom();                            //Finds an random empty room for populating the map
     Room* currentPlayerRoom;                                //Reference to the room the player is in
     Room* currentWumpusRoom;                                //Reference to the room the wumpus is in
-    void populateBats();                                    //Places bats in rooms
-    void populateArrows();                                  //Places arrows in rooms
-    void populateGold();                                    //Places gold in rooms
-    void populateTrap();                                    //Places a trap in a room
-    void populateWumpus();                                  //Places the wumpus in a room
-    void populateHunter();                                  //Places the player somewhere
+    void populateVents();                                   //Places bats in rooms
+    void populateDiapers();                                 //Places arrows in rooms
+    void populateCandy();                                   //Places gold in rooms
+    void populateDad();                                     //Places the wumpus in a room
+    void populatePlayer();                                  //Places the player somewhere
 };
 
 #endif //WUMPUS_MAP_H

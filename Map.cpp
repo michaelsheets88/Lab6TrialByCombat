@@ -6,10 +6,9 @@
 #include <cstdlib>
 #include "Map.h"
 #include "Candy.h"
-#include "DirtyDaiper.h"
+#include "DirtyDiaper.h"
 #include "AirVent.h"
 #include "Dad.h"
-#include "Legos.h"
 
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
@@ -21,40 +20,34 @@ Room* Map::findRandomEmptyRoom() {
     return roomAt(r, c);
 }
 
-void Map::populateGold() {
-    // Add 10 gold to empty rooms
-    for(int g = 0; g < maxGold; g++){
+void Map::populateCandy() {
+    // Add 10 candy to empty rooms
+    for(int g = 0; g < maxCandy; g++){
         findRandomEmptyRoom()->setItem(new Candy(1));
     }
 }
 
-void Map::populateArrows() {
+void Map::populateDiapers() {
     // Add 10 arrows to empty rooms
-    for(int a = 0; a < maxArrow; a++){
-        findRandomEmptyRoom()->setItem(new DirtyDaiper(rand() % 3));
+    for(int a = 0; a < maxDiapers; a++){
+        findRandomEmptyRoom()->setItem(new DirtyDiaper(rand() % 3));
     }
 }
 
-// Add Trap to empty room
-void Map::populateTrap(){
-    findRandomEmptyRoom()->setItem(new Trap());
-}
-
-// Add 3 bats to empty rooms
-void Map::populateBats() {
-    for(int b = 0; b < maxBats; b++){
-        new AirVent(findRandomEmptyRoom());
+// Add 3 vents to empty rooms
+void Map::populateVents() {
+    for(int v = 0; v < maxVents; v++){
+        moveCharacterTo(new AirVent(findRandomEmptyRoom()), findRandomEmptyRoom());
     }
 }
 
-void Map::populateHunter() {
-    moveCharacterTo(new Child(), new Room());
+void Map::populatePlayer() {
+    moveCharacterTo(new Child(), findRandomEmptyRoom());
 }
 
-void Map::populateWumpus() {
-    new Dad();
+void Map::populateDad() {
+    moveCharacterTo(new Dad(), findRandomEmptyRoom());
 }
-
 
 // This is the map constructor
 // It will create a map of many rooms, then
@@ -65,12 +58,11 @@ Map::Map(){
             rooms[r][c] = new Room();
         }
     }
-    populateHunter();
-    populateGold();
-    populateBats();
-    populateArrows();
-    populateTrap();
-    populateWumpus();
+    populatePlayer();
+    populateVents();
+    populateCandy();
+    populateDiapers();
+    populateDad();
 }
 
 Room* Map::roomAt(int row, int column) {
@@ -86,7 +78,7 @@ bool Map::moveCharacterTo(Character *mover, Room *newRoom){
 //        Do heroic stuff
         newRoom->moveCharacterTo(mover);
 
-    } else if(mover->name == batName){
+    } else if(mover->name == airVent){
         newRoom->moveCharacterTo(mover);
 
 //        Do bat things( nananananananananananna )

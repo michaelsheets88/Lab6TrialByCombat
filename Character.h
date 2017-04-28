@@ -11,7 +11,7 @@ using namespace std;
 
 const static string badGuyName = "Dad";
 const static string goodGuyName = "Child";
-const static string batName = "AirVent";
+const static string airVent = "AirVent";
 
 class Character {
 protected:
