@@ -11,6 +11,9 @@
 #include "AirVent.h"
 #include "Dad.h"
 
+const string BORDER = "+------+";
+const string EDGE = "|";
+
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
     int c = rand() % mapColumns;
@@ -69,12 +72,15 @@ bool Map::moveCharacterTo(Character *mover, Room *newRoom){
 }
 
 void Map::printMapState() {
+    cout << BORDER << endl;
     for(int r = 0; r < mapRows; r++){
+        cout << EDGE;
         for(int c = 0; c < mapColumns; c++){
             cout << roomAt(r, c)->getDisplay();
         }
-        cout << endl;
+        cout << EDGE << endl;
     }
+    cout << BORDER << endl;
 }
 
 // This is the map constructor
