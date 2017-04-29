@@ -5,16 +5,16 @@
 #ifndef WUMPUS_ROOM_H
 #define WUMPUS_ROOM_H
 
-
-#include <vector>
 #include "InventoryItem.h"
 #include "Character.h"
+#include <vector>
+
 
 //Display constants
 const static char DAD = 'D';
 const static char PLAYER = 'P';
 const static char AIRVENT = 'A';
-const static char DIAPER = 'P';
+const static char DIAPER = 'S';
 const static char CANDY = 'C';
 const static char LEGOTRAP = 'X';
 

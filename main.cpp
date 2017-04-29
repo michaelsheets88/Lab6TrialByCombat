@@ -1,5 +1,9 @@
 #include <iostream>
+#include "Room.cpp"
 #include "Map.cpp"
+#include "InventoryItem.cpp"
+#include "Candy.cpp"
+#include "DirtyDiaper.cpp"
 
 using namespace std;
 

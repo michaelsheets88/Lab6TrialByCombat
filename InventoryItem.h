@@ -14,8 +14,8 @@ public:
     bool isStinky;
     bool isDangerous;
     int amount;
-    InventoryItem(int initialAmount) : amount(initialAmount), isTasty(false), isStinky(false), isDangerous(false){};
-    InventoryItem();
+    InventoryItem(int initialAmount,bool tasty, bool stinky, bool dangerous) : amount(initialAmount), isTasty(tasty), isStinky(stinky), isDangerous(dangerous){};
+    InventoryItem() : amount(0), isTasty(false), isStinky(false), isDangerous(false){};
 };
 
 #endif //WUMPUS_INVENTORYITEM_H

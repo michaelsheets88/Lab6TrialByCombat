@@ -5,4 +5,4 @@
 #include <iostream>
 #include "DirtyDiaper.h"
 
-DirtyDiaper::DirtyDiaper(int initialAmount) : InventoryItem(initialAmount) {}
+DirtyDiaper::DirtyDiaper(int initialAmount) :  InventoryItem(initialAmount, false, true, false) {}

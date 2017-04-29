@@ -5,12 +5,12 @@
 #include "Room.h"
 
 Room::Room() {
-    itemInRoom = nullptr;
+    itemInRoom = new InventoryItem();
     currentCharacters.clear();
 }
 
 void Room::setItem() {
-    itemInRoom = nullptr;
+    itemInRoom = new InventoryItem();
 }
 
 void Room::setItem(InventoryItem *roomItem) {
@@ -18,7 +18,7 @@ void Room::setItem(InventoryItem *roomItem) {
 }
 
 bool Room::hasItem(){
-    return itemInRoom != nullptr;
+    return itemInRoom->amount > 0;
 }
 
 bool Room::hasCharacter() {

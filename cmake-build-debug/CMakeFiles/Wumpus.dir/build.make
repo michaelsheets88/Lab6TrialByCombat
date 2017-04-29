@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Mike\Desktop\Lab6TrialByCombat
+CMAKE_SOURCE_DIR = D:\MyDocs\Documents\Lab6TrialByCombat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug
+CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Wumpus.dir/depend.make
@@ -58,16 +58,16 @@ include CMakeFiles/Wumpus.dir/flags.make
 
 CMakeFiles/Wumpus.dir/main.cpp.obj: CMakeFiles/Wumpus.dir/flags.make
 CMakeFiles/Wumpus.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Wumpus.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\main.cpp.obj -c C:\Users\Mike\Desktop\Lab6TrialByCombat\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Wumpus.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\main.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp
 
 CMakeFiles/Wumpus.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wumpus.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Mike\Desktop\Lab6TrialByCombat\main.cpp > CMakeFiles\Wumpus.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp > CMakeFiles\Wumpus.dir\main.cpp.i
 
 CMakeFiles/Wumpus.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wumpus.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Mike\Desktop\Lab6TrialByCombat\main.cpp -o CMakeFiles\Wumpus.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\main.cpp -o CMakeFiles\Wumpus.dir\main.cpp.s
 
 CMakeFiles/Wumpus.dir/main.cpp.obj.requires:
 
@@ -82,16 +82,16 @@ CMakeFiles/Wumpus.dir/main.cpp.obj.provides.build: CMakeFiles/Wumpus.dir/main.cp
 
 CMakeFiles/Wumpus.dir/Legos.cpp.obj: CMakeFiles/Wumpus.dir/flags.make
 CMakeFiles/Wumpus.dir/Legos.cpp.obj: ../Legos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Wumpus.dir/Legos.cpp.obj"
-	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\Legos.cpp.obj -c C:\Users\Mike\Desktop\Lab6TrialByCombat\Legos.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Wumpus.dir/Legos.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wumpus.dir\Legos.cpp.obj -c D:\MyDocs\Documents\Lab6TrialByCombat\Legos.cpp
 
 CMakeFiles/Wumpus.dir/Legos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wumpus.dir/Legos.cpp.i"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Mike\Desktop\Lab6TrialByCombat\Legos.cpp > CMakeFiles\Wumpus.dir\Legos.cpp.i
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyDocs\Documents\Lab6TrialByCombat\Legos.cpp > CMakeFiles\Wumpus.dir\Legos.cpp.i
 
 CMakeFiles/Wumpus.dir/Legos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wumpus.dir/Legos.cpp.s"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Mike\Desktop\Lab6TrialByCombat\Legos.cpp -o CMakeFiles\Wumpus.dir\Legos.cpp.s
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyDocs\Documents\Lab6TrialByCombat\Legos.cpp -o CMakeFiles\Wumpus.dir\Legos.cpp.s
 
 CMakeFiles/Wumpus.dir/Legos.cpp.obj.requires:
 
@@ -118,7 +118,7 @@ Wumpus.exe: CMakeFiles/Wumpus.dir/build.make
 Wumpus.exe: CMakeFiles/Wumpus.dir/linklibs.rsp
 Wumpus.exe: CMakeFiles/Wumpus.dir/objects1.rsp
 Wumpus.exe: CMakeFiles/Wumpus.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Wumpus.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Wumpus.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Wumpus.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,6 +136,6 @@ CMakeFiles/Wumpus.dir/clean:
 .PHONY : CMakeFiles/Wumpus.dir/clean
 
 CMakeFiles/Wumpus.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Mike\Desktop\Lab6TrialByCombat C:\Users\Mike\Desktop\Lab6TrialByCombat C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles\Wumpus.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles\Wumpus.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Wumpus.dir/depend
 

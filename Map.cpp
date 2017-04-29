@@ -4,17 +4,17 @@
 
 
 #include <cstdlib>
+#include "Room.h"
 #include "Map.h"
 #include "Candy.h"
 #include "DirtyDiaper.h"
 #include "AirVent.h"
 #include "Dad.h"
 
-
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
     int c = rand() % mapColumns;
-    while(roomAt(r, c)->hasItem() || roomAt(r, c)->hasCharacter()){
+    while((roomAt(r, c)->hasItem()) || (roomAt(r, c)->hasCharacter())){
         r = rand() % mapRows;
         c = rand() % mapColumns;
     }
@@ -23,7 +23,7 @@ Room* Map::findRandomEmptyRoom() {
 
 void Map::populateCandy() {
     // Add 10 candy to empty rooms
-    for(int g = 0; g < maxCandy; g++){
+    for(int g = 0; g < 20; g++){
         findRandomEmptyRoom()->setItem(new Candy(1));
     }
 }
@@ -81,6 +81,11 @@ void Map::printMapState() {
 // It will create a map of many rooms, then
 // populate bats, items, player, and wumpus.
 Map::Map(){
+    for(int r = 0; r < mapRows; r++){
+        for(int c = 0; c < mapColumns; c++){
+            rooms[r][c] = new Room();
+        }
+    }
     populatePlayer();
     populateVents();
     populateCandy();
