@@ -10,6 +10,14 @@
 #include "InventoryItem.h"
 #include "Character.h"
 
+//Display constants
+const static char DAD = 'D';
+const static char PLAYER = 'P';
+const static char AIRVENT = 'A';
+const static char DIAPER = 'P';
+const static char CANDY = 'C';
+const static char LEGOTRAP = 'X';
+
 class Room {
 public:
     bool hasCharacter();                            //Checks to see if the room has any Characters

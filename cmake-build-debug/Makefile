@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\MyDocs\Documents\Lab6TrialByCombat
+CMAKE_SOURCE_DIR = C:\Users\Mike\Desktop\Lab6TrialByCombat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,44 +110,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Dad
+# Target rules for targets named Wumpus
 
 # Build rule for target.
-Dad: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 Dad
-.PHONY : Dad
+Wumpus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Wumpus
+.PHONY : Wumpus
 
 # fast build rule for target.
-Dad/fast:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/build
-.PHONY : Dad/fast
+Wumpus/fast:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/build
+.PHONY : Wumpus/fast
 
-Trap.obj: Trap.cpp.obj
+Legos.obj: Legos.cpp.obj
 
-.PHONY : Trap.obj
+.PHONY : Legos.obj
 
 # target to build an object file
-Trap.cpp.obj:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/Trap.cpp.obj
-.PHONY : Trap.cpp.obj
+Legos.cpp.obj:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Legos.cpp.obj
+.PHONY : Legos.cpp.obj
 
-Trap.i: Trap.cpp.i
+Legos.i: Legos.cpp.i
 
-.PHONY : Trap.i
+.PHONY : Legos.i
 
 # target to preprocess a source file
-Trap.cpp.i:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/Trap.cpp.i
-.PHONY : Trap.cpp.i
+Legos.cpp.i:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Legos.cpp.i
+.PHONY : Legos.cpp.i
 
-Trap.s: Trap.cpp.s
+Legos.s: Legos.cpp.s
 
-.PHONY : Trap.s
+.PHONY : Legos.s
 
 # target to generate assembly for a file
-Trap.cpp.s:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/Trap.cpp.s
-.PHONY : Trap.cpp.s
+Legos.cpp.s:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/Legos.cpp.s
+.PHONY : Legos.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -155,7 +155,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -164,7 +164,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -173,7 +173,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -183,11 +183,11 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... Dad
+	@echo ... Wumpus
 	@echo ... rebuild_cache
-	@echo ... Trap.obj
-	@echo ... Trap.i
-	@echo ... Trap.s
+	@echo ... Legos.obj
+	@echo ... Legos.i
+	@echo ... Legos.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

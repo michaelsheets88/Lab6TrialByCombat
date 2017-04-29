@@ -44,54 +44,54 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\MyDocs\Documents\Lab6TrialByCombat
+CMAKE_SOURCE_DIR = C:\Users\Mike\Desktop\Lab6TrialByCombat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Dad.dir
+# Target rules for target CMakeFiles/Wumpus.dir
 
 # All Build rule for target.
-CMakeFiles/Dad.dir/all:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/depend
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Dad"
-.PHONY : CMakeFiles/Dad.dir/all
+CMakeFiles/Wumpus.dir/all:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/depend
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Wumpus"
+.PHONY : CMakeFiles/Wumpus.dir/all
 
 # Include target in all.
-all: CMakeFiles/Dad.dir/all
+all: CMakeFiles/Wumpus.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Dad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 3
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Dad.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/Dad.dir/rule
+CMakeFiles/Wumpus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 3
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Wumpus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Mike\Desktop\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/Wumpus.dir/rule
 
 # Convenience name for target.
-Dad: CMakeFiles/Dad.dir/rule
+Wumpus: CMakeFiles/Wumpus.dir/rule
 
-.PHONY : Dad
-
-# clean rule for target.
-CMakeFiles/Dad.dir/clean:
-	$(MAKE) -f CMakeFiles\Dad.dir\build.make CMakeFiles/Dad.dir/clean
-.PHONY : CMakeFiles/Dad.dir/clean
+.PHONY : Wumpus
 
 # clean rule for target.
-clean: CMakeFiles/Dad.dir/clean
+CMakeFiles/Wumpus.dir/clean:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/clean
+.PHONY : CMakeFiles/Wumpus.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Wumpus.dir/clean
 
 .PHONY : clean
 

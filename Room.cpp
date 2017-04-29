@@ -33,3 +33,25 @@ bool Room::moveCharacterFrom(Character *mover) {
     // Remove mover from currentCharacters
 }
 
+
+char Room::getDisplay() {
+    if(hasCharacter()){
+        if(currentCharacters.front()->name == goodGuyName){
+            return PLAYER;
+        }else if(currentCharacters.front()->name == badGuyName){
+            return DAD;
+        }else if(currentCharacters.front()->name == airVent){
+            return AIRVENT;
+        }
+    }else if(hasItem()){
+        if(itemInRoom->isTasty){
+            return CANDY;
+        }else if(itemInRoom->isStinky){
+            return DIAPER;
+        }else if(itemInRoom->isDangerous){
+            return LEGOTRAP;
+        }
+    } else {
+        return ' ';
+    }
+}

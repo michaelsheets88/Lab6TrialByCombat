@@ -1,3 +1,3 @@
-"C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\Dad.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Dad.dir/objects.a @CMakeFiles\Dad.dir\objects1.rsp
-C:\MinGW\bin\g++.exe  -g   -Wl,--whole-archive CMakeFiles\Dad.dir/objects.a -Wl,--no-whole-archive  -o Dad.exe -Wl,--out-implib,libWumpus.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Dad.dir\linklibs.rsp
+"C:\Program Files (x86)\JetBrains\CLion 2016.3.4\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\Wumpus.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\Wumpus.dir/objects.a @CMakeFiles\Wumpus.dir\objects1.rsp
+C:\MinGW\bin\g++.exe  -g   -Wl,--whole-archive CMakeFiles\Wumpus.dir/objects.a -Wl,--no-whole-archive  -o Wumpus.exe -Wl,--out-implib,libWumpus.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Wumpus.dir\linklibs.rsp

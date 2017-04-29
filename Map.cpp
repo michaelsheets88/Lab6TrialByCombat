@@ -10,6 +10,7 @@
 #include "AirVent.h"
 #include "Dad.h"
 
+
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
     int c = rand() % mapColumns;
@@ -49,21 +50,7 @@ void Map::populateDad() {
     moveCharacterTo(new Dad(), findRandomEmptyRoom());
 }
 
-// This is the map constructor
-// It will create a map of many rooms, then
-// populate bats, items, player, and wumpus.
-Map::Map(){
-    for(int r = 0; r < mapRows; r++){
-        for(int c = 0; c < mapColumns; c++){
-            rooms[r][c] = new Room();
-        }
-    }
-    populatePlayer();
-    populateVents();
-    populateCandy();
-    populateDiapers();
-    populateDad();
-}
+
 
 Room* Map::roomAt(int row, int column) {
     return rooms[row][column];
@@ -71,16 +58,32 @@ Room* Map::roomAt(int row, int column) {
 
 bool Map::moveCharacterTo(Character *mover, Room *newRoom){
     if(mover->name == badGuyName){
-//        Do bad stuff
-        newRoom->moveCharacterTo(mover);
-
+        return newRoom->moveCharacterTo(mover);
     } else if(mover->name == goodGuyName){
-//        Do heroic stuff
-        newRoom->moveCharacterTo(mover);
-
+        return newRoom->moveCharacterTo(mover);
     } else if(mover->name == airVent){
-        newRoom->moveCharacterTo(mover);
-
-//        Do bat things( nananananananananananna )
+        return newRoom->moveCharacterTo(mover);
+    }else{
+        return false;
     }
+}
+
+void Map::printMapState() {
+    for(int r = 0; r < mapRows; r++){
+        for(int c = 0; c < mapColumns; c++){
+            cout << roomAt(r, c)->getDisplay();
+        }
+        cout << endl;
+    }
+}
+
+// This is the map constructor
+// It will create a map of many rooms, then
+// populate bats, items, player, and wumpus.
+Map::Map(){
+    populatePlayer();
+    populateVents();
+    populateCandy();
+    populateDiapers();
+    populateDad();
 }

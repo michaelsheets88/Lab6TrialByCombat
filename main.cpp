@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Map.cpp"
 
 using namespace std;
 
@@ -31,6 +32,9 @@ int const LOST = -1;
 bool developerOption = false;
 
 int main() {
+    Map *map = new Map();
+    map->printMapState();
+
     displayWelcomeMessage();
     int playerScore = gameLoop();
     if (playerScore > LOST) {
