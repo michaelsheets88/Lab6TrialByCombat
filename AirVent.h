@@ -6,16 +6,12 @@
 #define WUMPUS_BATS_H
 
 
-
-#include "Room.h"
-
 class AirVent : public Character{
-private:
-    Room* roomToMoveTo;
 public:
-    AirVent(Room* roomToMoveTo):Character(false){
-        this->roomToMoveTo = roomToMoveTo;
-    };
+    int rowToMoveTo;
+    int colToMoveTo;
+    AirVent(int row, int col):Character(false, airVent), rowToMoveTo(row), colToMoveTo(col){};
+    AirVent(): Character(){};
 };
 
 

@@ -12,13 +12,15 @@ using namespace std;
 const static string badGuyName = "Dad";
 const static string goodGuyName = "Child";
 const static string airVent = "AirVent";
+const static string defaultName = "Steve";
 
 class Character {
 protected:
     bool canMove;
 public:
     string name;
-    Character(bool canMove){};
+    Character(bool canMove, string name){};
+    Character(): canMove(false), name(defaultName){};
 };
 
 
