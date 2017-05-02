@@ -52,6 +52,6 @@ char Room::getDisplay() {
             return LEGOTRAP;
         }
     } else {
-        return ' ';
+        return EMPTYROOM;
     }
 }

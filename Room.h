@@ -17,6 +17,7 @@ const static char AIRVENT = 'A';
 const static char DIAPER = 'S';
 const static char CANDY = 'C';
 const static char LEGOTRAP = 'X';
+const static char EMPTYROOM = '*';
 
 class Room {
 public:
