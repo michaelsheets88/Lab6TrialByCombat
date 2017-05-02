@@ -19,11 +19,11 @@ bool handleOpeningInput();
 
 void displayGameOptions();
 
-int handleGameInput();
+int handleGameInput(Map*);
 
 void displayInstructions();
 
-void setUpGame();
+Map* setUpGame();
 
 void displayErrorMessage(char input);
 
@@ -53,11 +53,11 @@ int gameLoop() {
     do {
         displayOpeningOptions();
     } while (handleOpeningInput());
-    setUpGame();
+    Map* map = setUpGame();
     int gameScore;
     do {
         displayGameOptions();
-        gameScore = handleGameInput();
+        gameScore = handleGameInput(map);
     } while (gameScore == NOT_DONE);
     return gameScore >= 0;
 }
@@ -105,19 +105,19 @@ void displayInstructions() {
          "you first, then your gold, and life, are forfeit\n";
 }
 
-void setUpGame() {
+Map* setUpGame() {
+    Map *map = new Map();
+
     if (developerOption) {
-        cout << "I am sorry, but the Developer Option has not been implemented yet";
+        cout << "I am sorry, but the Developer Option has not been implemented yet" << endl;
         //Will create map with developer option enabled to create set map
-        Map *map = new Map();
         map->printMapState();
 
     } else {
-        cout << "Game implementation is still in process, my apologies";
-
-        Map *map = new Map();
+        cout << "Game implementation is still in process, my apologies" << endl;
         //Will create random map as per usual
     }
+    return map;
 }
 
 int handleGameInput(Map* theMap) {

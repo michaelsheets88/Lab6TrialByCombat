@@ -10,6 +10,14 @@
 #include "AirVent.h"
 #include "Dad.h"
 
+bool Map::isDadAlive() {
+    return dadAlive;
+}
+
+bool Map::isPlayerAlive() {
+    return playerAlive;
+}
+
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
     int c = rand() % mapColumns;

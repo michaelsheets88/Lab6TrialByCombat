@@ -69,14 +69,34 @@ bool Room::hasPlayer() {
     return found;
 }
 
+bool Room::hasDad() {
+    bool found = false;
+    for(int i = 0; i < currentCharacters.size(); i++){
+        if(currentCharacters.at(i) == badGuyName){
+            found = true;
+        }
+    }
+    return found;
+}
+
+bool Room::hasAirVent(){
+    bool found = false;
+    for(int i = 0; i < currentCharacters.size(); i++){
+        if(currentCharacters.at(i) == airVent){
+            found = true;
+        }
+    }
+    return found;
+}
+
 //  Character status is more important that the items, except the TRAP
 char Room::getDisplay() {
     if(hasCharacter()){
-        if(currentCharacters.front()->name == goodGuyName){
+        if(hasPlayer()){
             return PLAYER;
-        }else if(currentCharacters.front()->name == badGuyName){
+        }else if(hasDad()){
             return DAD;
-        }else if(currentCharacters.front()->name == airVent){
+        }else if(hasAirVent()){
             return AIRVENT;
         }
     }else if(hasItem()){
