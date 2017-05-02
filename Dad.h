@@ -13,7 +13,7 @@ public:
     bool kill();
     void wakeUp();
 
-    Dad():Character(false){
+    Dad():Character(false, badGuyName){
 
     };
 };

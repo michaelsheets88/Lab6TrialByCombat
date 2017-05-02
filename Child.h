@@ -15,7 +15,7 @@ private:
     InventoryItem *inventory[NUMBER_OF_ITEMS];
 public:
     void pickUp();
-    Child(): Character(true){};
+    Child(): Character(true, goodGuyName){};
 };
 
 

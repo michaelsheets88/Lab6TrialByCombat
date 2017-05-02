@@ -7,6 +7,7 @@
 
 #include "InventoryItem.h"
 #include "Character.h"
+#include "AirVent.h"
 #include <vector>
 
 
@@ -30,16 +31,15 @@ public:
     InventoryItem* getItems();                      //Pick up them items! (Destruct them and adjust character inventory array)
     void setItem(InventoryItem *roomItem);          //Puts stuff in the room
     void setItem();                                 //Sets the room to empty(no items)
-    void setDisplay(char newDisplay);               //Change the display for this room.
     char getDisplay();                              //Get the char to print out the map
-    bool moveCharacterTo(Character* mover);         //Sets the new room p with the character in it, put up items etc.
+    void moveCharacterTo(Character* mover);         //Sets the new room p with the character in it, put up items etc.
     bool moveCharacterFrom(Character* mover);       //Clears the character from the last room
-    bool killEverythingInside();                    //Some attack from the kid or dad
+    AirVent* roomsAirVent;                          //This is weird, but I need a spot to keep an air vent character, but cant leave it null.  So use a blank air vent constructor that does nothing, but now all rooms have an air vent named steve that cant move.
     Room();                                         //Constructor
 private:
     char display;                                   //For debugging, what to print out for a room
     InventoryItem *itemInRoom;                      //The item in a room
-    std::vector<Character*> currentCharacters;      //The characters in this room
+    std::vector<string> currentCharacters;      //The characters in this room
 };
 
 #endif //WUMPUS_ROOM_H

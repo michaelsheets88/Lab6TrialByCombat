@@ -36,9 +36,6 @@ int const LOST = -1;
 bool developerOption = false;
 
 int main() {
-    Map *map = new Map();
-    map->printMapState();
-
     displayWelcomeMessage();
     int playerScore = gameLoop();
     if (playerScore > LOST) {
@@ -98,12 +95,12 @@ void displayErrorMessage(char input) {
 }
 
 void displayInstructions() {
-    cout << "You are hunting a Dad inside a cave filled with gold and hazards.\n" <<
+    cout << "You are hunting a Dad inside a house filled with candy and hazards.\n" <<
          "Use the commands presented to you to traverse through the cave and\n" <<
-         "find the Candy the Dad has been hoarding and avoid Bats, who will\n" <<
-         "will steal some of your gold if they find you.\n" <<
-         "Find the Dad, shoot an arrow at him or set a deadly trap\n"<<
-         "and you win, escaping with your gold.\n" <<
+         "find the Candy the Dad has been hoarding and avoid getting lost in the air vents,\n" <<
+         "where you may lose some of your candy.\n" <<
+         "Find the Dad, hit him with a Dirty Diaper or set a deadly Lego trap\n"<<
+         "and you win, escaping with your Candy.\n" <<
          "But if you wake him up by going into the same room as him and he finds \n "<<
          "you first, then your gold, and life, are forfeit\n";
 }
@@ -112,24 +109,32 @@ void setUpGame() {
     if (developerOption) {
         cout << "I am sorry, but the Developer Option has not been implemented yet";
         //Will create map with developer option enabled to create set map
+        Map *map = new Map();
+        map->printMapState();
+
     } else {
         cout << "Game implementation is still in process, my apologies";
+
+        Map *map = new Map();
         //Will create random map as per usual
     }
 }
 
-int handleGameInput() {
+int handleGameInput(Map* theMap) {
     char input;
     cin >> input;
     switch (input)
         case 'n':
         case 'N':
+            //  The way to access the rooms through the map:
+            //  theMap->moveCharacterTo(theMap->roomAt(ROW int, COLUMN int))
+            //  This returns true if successful, false if failure
             cout << "You Move North" << endl;
 }
 
 void displayGameOptions() {
     cout << determineInfoString() << endl;
-    cout << "Actions: (N)orth, (S)outh, (E)ast (W)est, shoot (A)rrow, (W)ait, (Q)uit" << endl;
+    cout << "Actions: (N)orth, (S)outh, (E)ast (W)est, launch a (D)iaper, Lay a (T)rap, (W)ait, (Q)uit" << endl;
 }
 
 string determineInfoString() {

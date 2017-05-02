@@ -7,7 +7,6 @@
 
 #include <iostream>
 
-using namespace std;
 class InventoryItem {
 public:
     bool isTasty;
