@@ -8,8 +8,18 @@
 /**
  * Constructor for an empty room.
  */
+Room::Room(int row, int col): roomCol(col), roomRow(row){
+    itemInRoom = new InventoryItem();
+    currentCharacters.clear();
+}
+
+/**
+ * Constructor for an empty room.
+ */
 Room::Room() {
     itemInRoom = new InventoryItem();
+    roomCol = 100;
+    roomRow = 100;
     currentCharacters.clear();
 }
 

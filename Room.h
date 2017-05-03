@@ -22,6 +22,8 @@ const static char EMPTYROOM = '*';
 
 class Room {
 public:
+    int getRoomRow();
+    int getRoomCol();
     bool hasCharacter();                            //Checks to see if the room has any Characters
     bool hasAirVent();                              //Checks to see if the room has an Air Vent
     bool hasDad();                                  //Checks the rooms for Dad
@@ -35,9 +37,11 @@ public:
     void moveCharacterTo(Character* mover);         //Sets the new room p with the character in it, put up items etc.
     bool moveCharacterFrom(Character* mover);       //Clears the character from the last room
     AirVent* roomsAirVent;                          //This is weird, but I need a spot to keep an air vent character, but cant leave it null.  So use a blank air vent constructor that does nothing, but now all rooms have an air vent named steve that cant move.
+    Room(int row, int col);                         //Constructor with placement
     Room();                                         //Constructor
 private:
-    char display;                                   //For debugging, what to print out for a room
+    int roomRow;
+    int roomCol;
     InventoryItem *itemInRoom;                      //The item in a room
     std::vector<string> currentCharacters;      //The characters in this room
 };

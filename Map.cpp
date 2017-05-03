@@ -76,14 +76,12 @@ void Map::populateVents() {
 }
 
 void Map::populatePlayer() {
-    moveCharacterTo(new Child(), findRandomEmptyRoom());
+    moveCharacterTo(player, findRandomEmptyRoom());
 }
 
 void Map::populateDad() {
-    moveCharacterTo(new Dad(), findRandomEmptyRoom());
+    moveCharacterTo(dad, findRandomEmptyRoom());
 }
-
-
 
 Room* Map::roomAt(int row, int column) {
     return rooms[row][column];
@@ -112,6 +110,7 @@ bool Map::handleChildHazard(Character* child, Room* newRoom){
         return false;
     }else{
         AirVent* vent = newRoom->roomsAirVent;
+        cout << "Secret air vent tunnel!" << endl;
         moveCharacterTo(child, roomAt(vent->rowToMoveTo, vent->colToMoveTo));
     }
 }
@@ -128,11 +127,15 @@ bool Map::handleChildHazard(Character* child, Room* newRoom){
 bool Map::moveCharacterTo(Character *mover, Room *newRoom){
     if(mover->name == badGuyName){
         dadAttacksTheRoomHeIsEntering(newRoom);
+        mover->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
     } else if(mover->name == goodGuyName){
         if(newRoom->hasDad() || newRoom->hasAirVent()){
             return handleChildHazard(mover, newRoom);
         }
+
         newRoom->moveCharacterTo(mover);
+        getRoomStatus(newRoom);
+        mover->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
     } else if(mover->name == airVent){
         newRoom->moveCharacterTo(mover);
     }else{
@@ -155,15 +158,53 @@ void Map::printMapState() {
     cout << BORDER << endl;
 }
 
+string Map::getRoomStatus(Room *currentRoom) {
+    int column = currentRoom->getRoomCol();
+    int row = currentRoom->getRoomRow();
+    string status = "You enter a room and hear:";
+    bool dadNear = false;
+    bool airNear = false;
+    if(roomAt(row+1, column)->hasDad() || roomAt(row-1, column)->hasDad() || roomAt(row, column+1)->hasDad() || roomAt(row, column-1)->hasDad()){
+        if(dad->canMove){
+            status += " snoring";
+        }else{
+            status += " rustling";
+        }
+        dadNear = true;
+    }
+    if(roomAt(row+1, column)->hasAirVent() || roomAt(row-1, column)->hasAirVent() || roomAt(row, column+1)->hasAirVent() || roomAt(row, column-1)->hasAirVent()){
+        if(dadNear){
+            status += ", and";
+        }
+        status += " whooshing air.";
+        airNear = true;
+    }
+    if(dadNear && !airNear){
+        status += ".";
+    }
+    return status;
+}
+
+bool Map::throwDiaperInto(Room* room){
+    if(room->hasDad()){
+        dadAlive = false;
+        return true;
+    }else{
+        return false;
+    }
+}
+
 /**
  * The one, the only MAP CONSTRUCTOR!!!  ::Cheers from the crowd::
  */
-Map::Map(){
+Map::Map() {
     for(int r = 0; r < mapRows; r++){
         for(int c = 0; c < mapColumns; c++){
-            rooms[r][c] = new Room();
+            rooms[r][c] = new Room(r, c);
         }
     }
+    player = new Child();
+    dad = new Dad();
     populatePlayer();
     populateVents();
     populateCandy();

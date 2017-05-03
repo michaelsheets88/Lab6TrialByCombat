@@ -8,6 +8,7 @@
 #include "Room.h"
 #include "Child.h"
 #include "AirVent.h"
+#include "Dad.h"
 
 // Just some constants so we don't have numbers all up in our code.
 const static int mapColumns = 6;
@@ -23,14 +24,16 @@ const string EDGE = "|";
 // but also acts as the controller for moving characters between rooms.
 class Map {
 public:
-    const static int mapColumns = 6;
-    const static int mapRows = 6;
+    Child* player;
+    Dad* dad;
+    bool throwDiaperInto(Room* room);
+
     Room* getPlayerRoom();                                              //Room with player.
     Room* getDadRoom();
     bool canMoveTo(Room* proposedRoom);                                 //Character checks if able to move before move can happen.
     bool moveCharacterTo(Character *mover, Room *newRoom);              //Move the character into the new room
     void printMapState();                                               //For debugging, print out whats going on
-    void getAdjacentRoomStatus(Room* currentRoom);                      //Checks the rooms adjacent to the room the player just moved into
+    string getRoomStatus(Room* currentRoom);                      //Checks the rooms adjacent to the room the player just moved into
     Room* roomAt(int row, int column);                                  //Get the pointer for a room at a certain place in the map
     bool isPlayerAlive();                                               //A boolean for the main class to check to see if the player has died
     bool isDadAlive();                                                  //A boolean for the main class to check to see if the dad has been conquered
