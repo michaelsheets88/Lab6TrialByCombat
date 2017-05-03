@@ -26,6 +26,7 @@ class Map {
 public:
     Child* player;
     Dad* dad;
+    void setTrap(Room* trapRoom);
     bool throwDiaperInto(Room* room);
 
     Room* getPlayerRoom();                                              //Room with player.

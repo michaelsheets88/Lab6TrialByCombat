@@ -4,4 +4,3 @@
 
 #include "Legos.h"
 
-Trap::Trap() :  InventoryItem(trapLimit, false, false, true){}

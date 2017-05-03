@@ -10,9 +10,9 @@
 
 const static int trapLimit = 1;
 
-class Trap : public InventoryItem {
+class Legos : public InventoryItem {
 public:
-    Trap();
+    Legos(): InventoryItem(trapLimit, false, false, true){}
 };
 
 #endif //WUMPUS_TRAP_H

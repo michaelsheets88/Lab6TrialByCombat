@@ -60,13 +60,35 @@ void Room::moveCharacterTo(Character* mover){
     currentCharacters.push_back(mover->name);
 }
 
+int Room::getRoomCol() {
+    return roomCol;
+}
+
+int Room::getRoomRow() {
+    return roomRow;
+}
+
 /**
  * Remove the character from the
  * @param mover
  * @return
  */
 bool Room::moveCharacterFrom(Character *mover) {
-    // Remove mover from currentCharacters
+    //TODO Keep an eye on this.
+    string nameToRemove = mover->name;
+    currentCharacters.erase(std::remove(currentCharacters.begin(), currentCharacters.end(), nameToRemove), currentCharacters.end());
+}
+
+/**
+ * Return the items in the room.
+ * @return
+ */
+InventoryItem* Room::getItems() {
+
+    //TODO  Ian, keep an eye on this
+    InventoryItem* copy = itemInRoom;
+    itemInRoom = new InventoryItem();
+    return copy;
 }
 
 bool Room::hasPlayer() {

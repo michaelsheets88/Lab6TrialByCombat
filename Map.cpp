@@ -9,6 +9,7 @@
 #include "DirtyDiaper.h"
 #include "AirVent.h"
 #include "Dad.h"
+#include "Legos.h"
 
 Room* Map::getPlayerRoom() {
     for(int r = 0; r < mapRows; r++){
@@ -212,4 +213,8 @@ Map::Map() {
     populateDad();
     dadAlive = true;
     playerAlive = true;
+}
+
+void Map::setTrap(Room* trapRoom) {
+    trapRoom->setItem(new Legos());
 }
