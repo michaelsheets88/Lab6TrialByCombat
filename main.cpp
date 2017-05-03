@@ -179,6 +179,7 @@ int quit() {
 
 void layTrap(Map *theMap) {
     theMap->getChildRoom()->setTrap();
+    theMap->getChild()->
 }
 
 void launchDiaper(Map *theMap) {
@@ -193,7 +194,7 @@ void throwDiaperDialog() {
 }
 
 void movePlayerEast(Map *theMap) {
-    int childLocation = theMap->getChildLocation();
+    int childLocation = theMap->getPlayerRoom();
     if(theMap->canMoveTo(theMap->getRoom(childLocation/theMap->WIDTH,(childLocation%theMap->WIDTH)+1))){
         theMap->moveCharacterTo(theMap->getPlayer,theMap->getRoom(childLocation/theMap->WIDTH,(childLocation%theMap->WIDTH)+1));
     } else {

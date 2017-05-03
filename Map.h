@@ -25,6 +25,8 @@ class Map {
 public:
     const static int mapColumns = 6;
     const static int mapRows = 6;
+    Room* getPlayerRoom();                                              //Room with player.
+    Room* getDadRoom();
     bool canMoveTo(Room* proposedRoom);                                 //Character checks if able to move before move can happen.
     bool moveCharacterTo(Character *mover, Room *newRoom);              //Move the character into the new room
     void printMapState();                                               //For debugging, print out whats going on
@@ -37,7 +39,6 @@ private:
     bool handleChildHazard(Character* child, Room* newRoom);
     Room* rooms[mapRows][mapColumns];                                   //The 2D array of the rooms
     Room* findRandomEmptyRoom();                                        //Finds an random empty room for populating the map
-    void attackRoom(Room* room, string target);                         //The wumpus attacks the room it's in, the player attacks with arrows
     void dadAttacksTheRoomHeIsEntering(Room* newRoom);                  //Dad does an attack before he enters a new room
     void populateVents();                                               //Places bats in rooms
     void populateDiapers();                                             //Places arrows in rooms

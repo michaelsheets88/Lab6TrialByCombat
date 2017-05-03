@@ -13,6 +13,7 @@ class Child: public Character {
 private:
     static const int NUMBER_OF_ITEMS = 2;
     InventoryItem *inventory[NUMBER_OF_ITEMS];
+    
 public:
     void pickUp();
     Child(): Character(true, goodGuyName){};

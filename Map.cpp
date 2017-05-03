@@ -10,6 +10,26 @@
 #include "AirVent.h"
 #include "Dad.h"
 
+Room* Map::getPlayerRoom() {
+    for(int r = 0; r < mapRows; r++){
+        for(int c = 0; c <mapColumns; c++){
+            if(roomAt(r, c)->hasPlayer()){
+                return roomAt(r, c);
+            }
+        }
+    }
+}
+
+Room* Map::getDadRoom() {
+    for(int r = 0; r < mapRows; r++){
+        for(int c = 0; c <mapColumns; c++){
+            if(roomAt(r, c)->hasDad()){
+                return roomAt(r, c);
+            }
+        }
+    }
+}
+
 bool Map::isDadAlive() {
     return dadAlive;
 }
