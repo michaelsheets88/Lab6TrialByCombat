@@ -23,6 +23,8 @@ const string EDGE = "|";
 // but also acts as the controller for moving characters between rooms.
 class Map {
 public:
+    const static int mapColumns = 6;
+    const static int mapRows = 6;
     bool canMoveTo(Room* proposedRoom);                                 //Character checks if able to move before move can happen.
     bool moveCharacterTo(Character *mover, Room *newRoom);              //Move the character into the new room
     void printMapState();                                               //For debugging, print out whats going on

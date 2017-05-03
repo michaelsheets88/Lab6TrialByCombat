@@ -8,28 +8,29 @@
 using namespace std;
 
 void displayWelcomeMessage();
-
 int gameLoop();
-
 void highScoreSequence(int score);
-
 void displayOpeningOptions();
-
 bool handleOpeningInput();
-
-void displayGameOptions();
-
-int handleGameInput(Map*);
-
+void displayGameOptions(Map *theMap);
+int handleGameInput(Map *);
 void displayInstructions();
-
-Map* setUpGame();
-
+Map *setUpGame();
 void displayErrorMessage(char input);
-
-string determineInfoString();
-
+string determineInfoString(Map *theMap);
 void displayEndMessage();
+void movePlayerNorth(Map *theMap);
+int gameCycle(Map *theMap);
+void movePlayerWest(Map *theMap);
+void movePlayerSouth(Map *theMap);
+void movePlayerEast(Map *theMap);
+void launchDiaper(Map *theMap);
+void layTrap(Map *theMap);
+int quit(Map *theMap);
+
+void printWallMessage();
+
+void throwDiaperDialog();
 
 int const NOT_DONE = -2;
 int const LOST = -1;
@@ -53,17 +54,18 @@ int gameLoop() {
     do {
         displayOpeningOptions();
     } while (handleOpeningInput());
-    Map* map = setUpGame();
+    Map *map = setUpGame();
     int gameScore;
     do {
-        displayGameOptions();
+
+        displayGameOptions(map);
         gameScore = handleGameInput(map);
     } while (gameScore == NOT_DONE);
     return gameScore >= 0;
 }
 
 void highScoreSequence(int score) {
-    cout << "High Score not yet implemented, but your score was" << score;
+    cout << "High Score not yet implemented, but your score was " << score;
 }
 
 bool handleOpeningInput() {
@@ -95,17 +97,17 @@ void displayErrorMessage(char input) {
 }
 
 void displayInstructions() {
-    cout << "You are hunting a Dad inside a house filled with candy and hazards.\n" <<
-         "Use the commands presented to you to traverse through the cave and\n" <<
-         "find the Candy the Dad has been hoarding and avoid getting lost in the air vents,\n" <<
+    cout << "You are trying to escape Dad inside a house filled with candy and hazards.\n" <<
+         "Use the commands presented to you to traverse through the house and\n" <<
+         "find the Candy that Dad has been hoarding and avoid getting lost in the air vents,\n" <<
          "where you may lose some of your candy.\n" <<
-         "Find the Dad, hit him with a Dirty Diaper or set a deadly Lego trap\n"<<
+         "Find Dad, hit him with a Dirty Diaper or set a deadly Lego trap\n" <<
          "and you win, escaping with your Candy.\n" <<
-         "But if you wake him up by going into the same room as him and he finds \n "<<
-         "you first, then your gold, and life, are forfeit\n";
+         "But if you wake him up by going into the same room as him and he finds \n " <<
+         "you first, then your Candy, and your backside, are forfeit\n";
 }
 
-Map* setUpGame() {
+Map *setUpGame() {
     Map *map = new Map();
 
     if (developerOption) {
@@ -120,28 +122,133 @@ Map* setUpGame() {
     return map;
 }
 
-int handleGameInput(Map* theMap) {
+int handleGameInput(Map *theMap) {
     char input;
+    int score;
     cin >> input;
-    switch (input)
+    switch (input) {
         case 'n':
         case 'N':
-            //  The way to access the rooms through the map:
-            //  theMap->moveCharacterTo(theMap->roomAt(ROW int, COLUMN int))
-            //  This returns true if successful, false if failure
-            cout << "You Move North" << endl;
+            movePlayerNorth(theMap);
+            score = gameCycle(theMap);
+            break;
+        case 'W':
+        case 'w':
+            movePlayerWest(theMap);
+            score = gameCycle(theMap);
+            break;
+        case 'S':
+        case 's':
+            movePlayerSouth(theMap);
+            score = gameCycle(theMap);
+            break;
+        case 'E':
+        case 'e':
+            movePlayerEast(theMap);
+            score = gameCycle(theMap);
+            break;
+        case 'l':
+        case 'L':
+            launchDiaper(theMap);
+            score = gameCycle(theMap);
+            break;
+        case 'T':
+        case 't':
+            layTrap(theMap);
+            score = gameCycle(theMap);
+            break;
+        case 'D':
+        case 'd':
+            score = gameCycle(theMap);
+            break;
+        case 'Q':
+        case 'q':
+            score = quit(theMap);
+            break;
+        default:
+            displayErrorMessage(input);
+            score = NOT_DONE;
+            break;
+    }
+    return score;
 }
 
-void displayGameOptions() {
-    cout << determineInfoString() << endl;
-    cout << "Actions: (N)orth, (S)outh, (E)ast (W)est, launch a (D)iaper, Lay a (T)rap, (W)ait, (Q)uit" << endl;
+int quit() {
+    return 0;
 }
 
-string determineInfoString() {
-    return "Info will be provided when implemented";
+void layTrap(Map *theMap) {
+    theMap->getChildRoom()->setTrap();
 }
 
-void displayEndMessage(){
+void launchDiaper(Map *theMap) {
+    do {
+        throwDiaperDialog();
+    } while (handleDiaperInput());
+}
+
+void throwDiaperDialog() {
+    cout << "In which direction would you like to launch your diaper?"<<endl;
+    cout << "(N)orth, (S)outh, (E)ast (W)est"<<endl;
+}
+
+void movePlayerEast(Map *theMap) {
+    int childLocation = theMap->getChildLocation();
+    if(theMap->canMoveTo(theMap->getRoom(childLocation/theMap->WIDTH,(childLocation%theMap->WIDTH)+1))){
+        theMap->moveCharacterTo(theMap->getPlayer,theMap->getRoom(childLocation/theMap->WIDTH,(childLocation%theMap->WIDTH)+1));
+    } else {
+        printWallMessage();
+    }
+}
+
+void printWallMessage() {
+    cout << "There is no door there." << endl;
+}
+
+void movePlayerSouth(Map *theMap) {
+    int childLocation = theMap->getChildLocation();
+    if(theMap->canMoveTo(theMap->getRoom(childLocation/theMap->WIDTH + 1,(childLocation%theMap->WIDTH)))){
+        theMap->moveCharacterTo(theMap->getPlayer,theMap->getRoom(childLocation/theMap->WIDTH,(childLocation%theMap->WIDTH)+1));
+    } else {
+        printWallMessage();
+    }
+}
+
+void movePlayerWest(Map *theMap) {
+    int childLocation = theMap->getChildLocation();
+    if(theMap->canMoveTo(theMap->getRoom(childLocation/theMap->mapRows,(childLocation%theMap->mapRows -1)))){
+        theMap->moveCharacterTo(theMap->getPlayer,theMap->getRoom(childLocation/theMap->mapRows,(childLocation%theMap->WIDTH)+1));
+    } else {
+        printWallMessage();
+    }
+}
+
+int gameCycle(Map *theMap) {
+    if(theMap->isDadAlive())
+}
+
+void movePlayerNorth(Map *theMap) {
+    int childLocation = theMap->getChildLocation();
+    if(theMap->canMoveTo(theMap->getRoom(childLocation/theMap->mapRows - 1,(childLocation%theMap->mapRows )))){
+        theMap->moveCharacterTo(theMap->getPlayer,theMap->getRoom(childLocation/theMap->mapRows,(childLocation%theMap->mapRows)+1));
+    } else {
+        printWallMessage();
+    }
+}
+
+void displayGameOptions(Map *theMap) {
+    cout << determineInfoString(theMap) << endl;
+    cout << "Actions: (N)orth, (S)outh, (E)ast, (W)est, (L)aunch a diaper, Lay a (T)rap, (D)elay, (Q)uit" << endl;
+}
+
+string determineInfoString(Map *theMap) {
+    return theMap->getAdjacentRoomStatus(theMap->getChildRoom);
+}
+
+void displayEndMessage() {
 
 }
 
+//  The way to access the rooms through the map:
+//  theMap->moveCharacterTo(theMap->roomAt(ROW int, COLUMN int))
+//  This returns true if successful, false if failure

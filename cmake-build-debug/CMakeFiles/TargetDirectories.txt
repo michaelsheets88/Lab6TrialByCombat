@@ -1,3 +1,3 @@
-D:/MyDocs/Documents/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/MyDocs/Documents/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/Wumpus.dir
-D:/MyDocs/Documents/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/lovelli/Documents/GitHub/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lovelli/Documents/GitHub/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/Wumpus.dir
+C:/Users/lovelli/Documents/GitHub/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/rebuild_cache.dir

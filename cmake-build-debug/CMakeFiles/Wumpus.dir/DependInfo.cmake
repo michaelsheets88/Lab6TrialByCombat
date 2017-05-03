@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/MyDocs/Documents/Lab6TrialByCombat/Legos.cpp" "D:/MyDocs/Documents/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/Wumpus.dir/Legos.cpp.obj"
-  "D:/MyDocs/Documents/Lab6TrialByCombat/main.cpp" "D:/MyDocs/Documents/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/Wumpus.dir/main.cpp.obj"
+  "C:/Users/lovelli/Documents/GitHub/Lab6TrialByCombat/Legos.cpp" "C:/Users/lovelli/Documents/GitHub/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/Wumpus.dir/Legos.cpp.obj"
+  "C:/Users/lovelli/Documents/GitHub/Lab6TrialByCombat/main.cpp" "C:/Users/lovelli/Documents/GitHub/Lab6TrialByCombat/cmake-build-debug/CMakeFiles/Wumpus.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
