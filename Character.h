@@ -15,9 +15,9 @@ const static string airVent = "AirVent";
 const static string defaultName = "Steve";
 
 class Character {
-protected:
-    bool canMove;
 public:
+    void setCurrentRoom(int r, int c);
+    bool canMove;
     string name;
     Character(bool canMove, string name){};
     Character(): canMove(false), name(defaultName){};
