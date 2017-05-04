@@ -20,7 +20,6 @@ const string BORDER = "+------+";
 const string EDGE = "|";
 const string giantSpace = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
-
 // This is a pretty beefy class that not only manages the rooms and their creation/inventory,
 // but also acts as the controller for moving characters between rooms.
 class Map {
@@ -31,11 +30,13 @@ public:
     bool canMoveTo(int row, int col);                                   //Character checks if able to move before move can happen.
     bool moveCharacterTo(Character *mover, Room *newRoom);              //Move the character into the new room
     void printMapState();                                               //For debugging, print out whats going on
+    void moveDad();
     string getRoomStatus(Room* currentRoom, Child* player);                            //Checks the rooms adjacent to the room the player just moved into
     Room* roomAt(int row, int column);                                  //Get the pointer for a room at a certain place in the map
     bool isPlayerAlive();                                               //A boolean for the main class to check to see if the player has died
     bool isDadAlive();                                                  //A boolean for the main class to check to see if the dad has been conquered
     bool throwDiaperInto(Room* room);
+    bool playerCheck(int row, int col);
     Map();                                                              //Constructor
 private:
     bool ventCheck(int row, int col);

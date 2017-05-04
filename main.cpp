@@ -23,8 +23,9 @@ bool movePlayerSouth(Map *theMap);
 bool movePlayerEast(Map *theMap);
 bool launchDiaper(Map *theMap);
 void layTrap(Map *theMap);
-
+int endOfTurnCheck(Map* theMap, bool isNotDone);
 void printWallMessage();
+void dadCanMoveCheck(Map *map);
 
 void throwDiaperDialog();
 
@@ -56,11 +57,10 @@ int gameLoop() {
     Map *map = setUpGame();
     int gameScore;
     do {
-
         displayGameOptions();
         gameScore = handleGameInput(map);
     } while (gameScore == NOT_DONE);
-    return gameScore >= 0;
+    return gameScore;
 }
 
 void highScoreSequence(int newScore) {
@@ -172,13 +172,27 @@ int handleGameInput(Map *theMap) {
     if (developerOption) {
         theMap->printMapState();
     }
+    dadCanMoveCheck(theMap);
+    return endOfTurnCheck(theMap, isNotDone);
+}
+
+void dadCanMoveCheck(Map* map){
+    if(map->playerCheck(map->dad->getRow(), map->dad->getColumn())){
+        map->dad->canMove = true;
+    }
+    if(map->isDadAlive() && map->dad->canMove){
+        map->moveDad();
+    }
+}
+
+int endOfTurnCheck(Map* theMap, bool isNotDone){
     if(isNotDone){
         return NOT_DONE;
     } else {
-        if (!theMap->isPlayerAlive()){
-            return LOST;
-        } else {
+        if (theMap->isPlayerAlive() && !theMap->isDadAlive()){
             return theMap->player->getCandy();
+        } else {
+            return LOST;
         }
     }
 }

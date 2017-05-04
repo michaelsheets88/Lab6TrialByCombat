@@ -158,6 +158,19 @@ void Map::printMapState() {
     cout << BORDER << endl;
 }
 
+bool Map::playerCheck(int row, int col) {
+    if((row+1 >= 0 && row+1 < mapRows) && (roomAt(row + 1, col)->hasPlayer())){
+        return true;
+    }
+    if((row-1 >= 0 && row-1 < mapRows) && (roomAt(row - 1, col)->hasPlayer())){
+        return true;
+    }
+    if((col+1 >= 0 && col+1 < mapColumns) && (roomAt(row, col+1)->hasPlayer())){
+        return true;
+    }
+    return (col - 1 >= 0 && col - 1 < mapColumns) && (roomAt(row, col - 1)->hasPlayer());
+}
+
 bool Map::ventCheck(int row, int col) {
     if((row+1 >= 0 && row+1 < mapRows) && (roomAt(row + 1, col)->hasAirVent())){
         return true;
@@ -244,4 +257,33 @@ Map::Map() {
 
 void Map::setTrap(Room* trapRoom) {
     trapRoom->setItem(new Legos());
+}
+
+void Map::moveDad() {
+    if(isDadAlive()){
+        switch(rand() % 5){
+            case 1:
+                if(canMoveTo(dad->getRow()+1, dad->getColumn())){
+                    moveCharacterTo(dad, roomAt(dad->getRow()+1, dad->getColumn()));
+                }
+                break;
+            case 2:
+                if(canMoveTo(dad->getRow()-1, dad->getColumn())){
+                    moveCharacterTo(dad, roomAt(dad->getRow()-1, dad->getColumn()));
+                }
+                break;
+            case 3:
+                if(canMoveTo(dad->getRow()+1, dad->getColumn()+1)){
+                    moveCharacterTo(dad, roomAt(dad->getRow(), dad->getColumn()+1));
+                }
+                break;
+            case 4:
+                if(canMoveTo(dad->getRow(), dad->getColumn()-1)){
+                    moveCharacterTo(dad, roomAt(dad->getRow(), dad->getColumn()-1));
+                }
+                break;
+            case 5:
+                dad->canMove = false;
+        }
+    }
 }
