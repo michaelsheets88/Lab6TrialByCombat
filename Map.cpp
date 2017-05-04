@@ -49,8 +49,11 @@ void Map::populateDiapers() {
 void Map::populateVents() {
     for(int v = 0; v < maxVents; v++){
         AirVent *vent = new AirVent(0, 0);
-        moveCharacterTo(vent, findRandomEmptyRoom());
         Room *room = findRandomEmptyRoom();
+        int ventRow = room->getRoomRow();
+        int ventCol = room->getRoomCol();
+        moveCharacterTo(vent, room);
+        room = findRandomEmptyRoom();
         vent->colToMoveTo = room->getRoomCol();
         vent->rowToMoveTo = room->getRoomRow();
     }
@@ -73,9 +76,15 @@ Room* Map::roomAt(int row, int column) {
  * The playerAlive boolean is set to false. Because kill.
  * @param newRoom   Room being moved into
  */
-void Map::dadAttacksTheRoomHeIsEntering(Room *newRoom) {
+void Map::dadAttacksTheRoomHeIsEntering(Dad *dad, Room *newRoom) {
     if(newRoom->hasPlayer()){
         playerAlive = false;
+    }else if(newRoom->hasSetTrap()){
+        dadAlive = false;
+    }else{
+        roomAt(dad->getRow(), dad->getColumn())->moveCharacterFrom(dad);
+        newRoom->moveCharacterTo(dad);
+        dad->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
     }
 }
 
@@ -90,11 +99,25 @@ void Map::handleChildHazard(Character* child, Room* newRoom){
         playerAlive = false;
     }else{
         cout << "Secret air vent tunnel!" << endl;
-        Room *room =  roomAt(newRoom->roomsAirVent->rowToMoveTo, newRoom->roomsAirVent->colToMoveTo);
+        int destRow = newRoom->roomsAirVent->rowToMoveTo;
+        int destCol = newRoom->roomsAirVent->colToMoveTo;
+        Room *room =  roomAt(destRow, destCol);
         moveCharacterTo(child, room);
     }
 }
 
+void Map::moveChildSafely(Character* child, Room* newRoom){
+    InventoryItem *item = newRoom->getItems();
+    if(item->isTasty){
+        player->addCandy(item->amount);
+    } else if (item->isStinky) {
+        player->addDiaper(item->amount);
+    }
+    roomAt(child->getRow(), child->getColumn())->moveCharacterFrom(child);
+    newRoom->moveCharacterTo(child);
+    cout << giantSpace << "Your current inventory: " << player->getCandy() << " candy, and "<< player->getDiapers() << " diapers." << endl << getRoomStatus(newRoom, (Child*) child) << endl;
+    child->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
+}
 
 /**
  * The dad attacks the room he is moving into(possibly ending the game)
@@ -106,23 +129,13 @@ void Map::handleChildHazard(Character* child, Room* newRoom){
  */
 bool Map::moveCharacterTo(Character *mover, Room *newRoom){
     if(mover->name == badGuyName){
-        dadAttacksTheRoomHeIsEntering(newRoom);
-        roomAt(mover->getRow(), mover->getColumn())->moveCharacterFrom(mover);
-        newRoom->moveCharacterTo(mover);
-        mover->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
+        dadAttacksTheRoomHeIsEntering((Dad*) mover, newRoom);
     } else if(mover->name == goodGuyName){
-        if(newRoom->getItems()->isTasty){
-            player->addCandy(newRoom->getItems()->amount);
-        } else if (newRoom->getItems()->isStinky) {
-            player->addDiaper(newRoom->getItems()->amount);
-        }
         if(newRoom->hasDad() || newRoom->hasAirVent()){
             handleChildHazard(mover, newRoom);
+        }else{
+            moveChildSafely((Child*) mover, newRoom);
         }
-        roomAt(mover->getRow(), mover->getColumn())->moveCharacterFrom(mover);
-        newRoom->moveCharacterTo(mover);
-        cout <<getRoomStatus(newRoom)<<endl;
-        mover->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
     } else if(mover->name == airVent){
         newRoom->moveCharacterTo(mover);
         mover->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
@@ -171,9 +184,7 @@ bool Map::dadCheck(int row, int col) {
     return (col - 1 >= 0 && col - 1 < mapColumns) && (roomAt(row, col - 1)->hasDad());
 }
 
-string Map::getRoomStatus(Room *currentRoom) {
-    int column = currentRoom->getRoomCol();
-    int row = currentRoom->getRoomRow();
+string Map::getRoomStatus(Room *currentRoom, Child *player) {
     string status = "You enter a room and hear:";
     bool dadNear = false;
     bool airNear = false;

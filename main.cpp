@@ -33,7 +33,7 @@ bool handleDiaperInput(Map *theMap);
 int const NOT_DONE = -2;
 int const LOST = -1;
 bool developerOption = false;
-vector<int> scores = {0};
+vector<int> scores = {};
 
 int main() {
     displayWelcomeMessage();
@@ -65,9 +65,9 @@ int gameLoop() {
 
 void highScoreSequence(int newScore) {
     scores.push_back(newScore);
-    cout<< "High Scores for this session:"<<endl;
+    cout<< "High Scores for this session:" <<endl;
     for(int eachScore : scores){
-        cout << eachScore<<endl;
+        cout << eachScore <<endl;
     }
 }
 
@@ -107,7 +107,8 @@ void displayInstructions() {
          "Find Dad, hit him with a Dirty Diaper or set a deadly Lego trap\n" <<
          "and you win, escaping with your Candy.\n" <<
          "But if you wake him up by going into the same room as him and he finds \n " <<
-         "you first, then your Candy, and your backside, are forfeit\n";
+         "you first, then your Candy, and your backside, are forfeit.\n"
+         "You will begin the game with no candy, no diapers, and enough Legos for one trap.\n";
 }
 
 Map *setUpGame() {
@@ -145,6 +146,7 @@ int handleGameInput(Map *theMap) {
                 isNotDone =  launchDiaper(theMap);
             } else {
                 cout << "You are out of Diapers"<<endl;
+                isNotDone = true;
             }
             break;
         case 'T':

@@ -5,7 +5,6 @@
 #ifndef WUMPUS_HUNTER_H
 #define WUMPUS_HUNTER_H
 
-
 #include "InventoryItem.cpp"
 #include "Character.h"
 
@@ -18,7 +17,8 @@ private:
 public:
     void pickUp();
     Child(): Character(true, goodGuyName){
-
+        inventory[0] = 0;       //Candy
+        inventory[1] = 0;       //Diapers
     };
     int getCandy();
     int getDiapers();
@@ -26,8 +26,6 @@ public:
     void addDiaper(int amount);
     bool loseDiaper();
     bool useTrap();
-
 };
-
 
 #endif //WUMPUS_HUNTER_H

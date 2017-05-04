@@ -77,7 +77,6 @@ int Room::getRoomRow() {
  * @return
  */
 bool Room::moveCharacterFrom(Character *mover) {
-    //TODO Keep an eye on this.
     string nameToRemove = mover->name;
     currentCharacters.erase(std::remove(currentCharacters.begin(), currentCharacters.end(), nameToRemove), currentCharacters.end());
 }
@@ -141,4 +140,8 @@ char Room::getDisplay() {
     }else{
         return EMPTYROOM;
     }
+}
+
+bool Room::hasSetTrap() {
+    return itemInRoom->isDangerous;
 }
