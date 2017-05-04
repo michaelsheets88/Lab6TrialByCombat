@@ -8,7 +8,9 @@
 #include "DirtyDiaper.h"
 #include "Legos.h"
 
-
+bool Map::canMoveTo(int row, int col) {
+    return !(row >= mapRows || row < 0 || col < 0 || col >= mapColumns);
+}
 
 bool Map::isDadAlive() {
     return dadAlive;
@@ -84,14 +86,13 @@ void Map::dadAttacksTheRoomHeIsEntering(Room *newRoom) {
  * @param newRoom       The room with the bad stuff.
  * @return true if vent (game continues), false if dad (game ending)
  */
-bool Map::handleChildHazard(Character* child, Room* newRoom){
+void Map::handleChildHazard(Character* child, Room* newRoom){
     if(newRoom->hasDad()){
         playerAlive = false;
-        return false;
     }else{
         AirVent* vent = newRoom->roomsAirVent;
         cout << "Secret air vent tunnel!" << endl;
-        return moveCharacterTo(child, roomAt(vent->rowToMoveTo, vent->colToMoveTo));
+        moveCharacterTo(child, roomAt(vent->rowToMoveTo, vent->colToMoveTo));
     }
 }
 
@@ -113,7 +114,7 @@ bool Map::moveCharacterTo(Character *mover, Room *newRoom){
             player->addCandy(newRoom->getItems()->amount);
         } else if (newRoom->getItems()->isStinky)
         if(newRoom->hasDad() || newRoom->hasAirVent()){
-            return handleChildHazard(mover, newRoom);
+            handleChildHazard(mover, newRoom);
         }
 
         newRoom->moveCharacterTo(mover);
@@ -121,9 +122,8 @@ bool Map::moveCharacterTo(Character *mover, Room *newRoom){
         mover->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
     } else if(mover->name == airVent){
         newRoom->moveCharacterTo(mover);
-    }else{
-        return isDadAlive() && isPlayerAlive();
     }
+    return isDadAlive() && isPlayerAlive();
 }
 
 /**

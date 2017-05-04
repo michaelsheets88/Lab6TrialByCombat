@@ -53,45 +53,45 @@ RM = "C:\Program Files\JetBrains\CLion 2017.1.1\bin\cmake\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\lovelli\Documents\GitHub\Lab6TrialByCombat
+CMAKE_SOURCE_DIR = D:\MyDocs\Documents\Lab6TrialByCombat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\lovelli\Documents\GitHub\Lab6TrialByCombat\cmake-build-debug
+CMAKE_BINARY_DIR = D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Lab6TrialByCombat.dir
+# Target rules for target CMakeFiles/Wumpus.dir
 
 # All Build rule for target.
-CMakeFiles/Lab6TrialByCombat.dir/all:
-	$(MAKE) -f CMakeFiles\Lab6TrialByCombat.dir\build.make CMakeFiles/Lab6TrialByCombat.dir/depend
-	$(MAKE) -f CMakeFiles\Lab6TrialByCombat.dir\build.make CMakeFiles/Lab6TrialByCombat.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\lovelli\Documents\GitHub\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target Lab6TrialByCombat"
-.PHONY : CMakeFiles/Lab6TrialByCombat.dir/all
+CMakeFiles/Wumpus.dir/all:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/depend
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Wumpus"
+.PHONY : CMakeFiles/Wumpus.dir/all
 
 # Include target in all.
-all: CMakeFiles/Lab6TrialByCombat.dir/all
+all: CMakeFiles/Wumpus.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Lab6TrialByCombat.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\lovelli\Documents\GitHub\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 12
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Lab6TrialByCombat.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\lovelli\Documents\GitHub\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/Lab6TrialByCombat.dir/rule
+CMakeFiles/Wumpus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 3
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Wumpus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\MyDocs\Documents\Lab6TrialByCombat\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/Wumpus.dir/rule
 
 # Convenience name for target.
-Lab6TrialByCombat: CMakeFiles/Lab6TrialByCombat.dir/rule
+Wumpus: CMakeFiles/Wumpus.dir/rule
 
-.PHONY : Lab6TrialByCombat
-
-# clean rule for target.
-CMakeFiles/Lab6TrialByCombat.dir/clean:
-	$(MAKE) -f CMakeFiles\Lab6TrialByCombat.dir\build.make CMakeFiles/Lab6TrialByCombat.dir/clean
-.PHONY : CMakeFiles/Lab6TrialByCombat.dir/clean
+.PHONY : Wumpus
 
 # clean rule for target.
-clean: CMakeFiles/Lab6TrialByCombat.dir/clean
+CMakeFiles/Wumpus.dir/clean:
+	$(MAKE) -f CMakeFiles\Wumpus.dir\build.make CMakeFiles/Wumpus.dir/clean
+.PHONY : CMakeFiles/Wumpus.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Wumpus.dir/clean
 
 .PHONY : clean
 

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Room.cpp"
 #include "Map.cpp"
+#include "Character.cpp"
+#include "Child.cpp"
 
 using namespace std;
 

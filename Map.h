@@ -27,11 +27,7 @@ public:
     Child* player;
     Dad* dad;
     void setTrap(Room* trapRoom);
-    bool DiaperInto(Room* room);
-
-    Room* getPlayerRoom();                                              //Room with player.
-    Room* getDadRoom();
-    bool canMoveTo(Room* proposedRoom);                                 //Character checks if able to move before move can happen.
+    bool canMoveTo(int row, int col);                                 //Character checks if able to move before move can happen.
     bool moveCharacterTo(Character *mover, Room *newRoom);              //Move the character into the new room
     void printMapState();                                               //For debugging, print out whats going on
     string getRoomStatus(Room* currentRoom);                      //Checks the rooms adjacent to the room the player just moved into
@@ -41,7 +37,8 @@ public:
     bool throwDiaperInto(Room* room);
     Map();                                                              //Constructor
 private:
-    bool handleChildHazard(Character* child, Room* newRoom);
+
+    void handleChildHazard(Character* child, Room* newRoom);
     Room* rooms[mapRows][mapColumns];                                   //The 2D array of the rooms
     Room* findRandomEmptyRoom();                                        //Finds an random empty room for populating the map
     void dadAttacksTheRoomHeIsEntering(Room* newRoom);                  //Dad does an attack before he enters a new room
