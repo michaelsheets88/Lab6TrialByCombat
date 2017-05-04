@@ -22,8 +22,8 @@ public:
     void setCurrentRoom(int r, int c);
     bool canMove;
     string name;
-    Character(bool canMove, string name){};
-    Character(): canMove(false), name(defaultName){};
+    Character(bool canMove, string name): canMove(canMove), name(name), row(0), col(0){};
+    Character(): canMove(false), name(defaultName), row(0), col(0){};
     int getRow();
     int getColumn();
 };

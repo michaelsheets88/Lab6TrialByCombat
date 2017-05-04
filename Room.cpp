@@ -57,6 +57,9 @@ bool Room::hasItem(){
  * @param mover     The character moving in
  */
 void Room::moveCharacterTo(Character* mover){
+    if(mover->name == airVent){
+        roomsAirVent = (AirVent*)mover;
+    }
     currentCharacters.push_back(mover->name);
 }
 
@@ -104,7 +107,7 @@ bool Room::hasPlayer() {
 bool Room::hasDad() {
     bool found = false;
     for(int i = 0; i < currentCharacters.size(); i++){
-        if(currentCharacters.at(i) == badGuyName){
+        if(currentCharacters[i] == badGuyName){
             found = true;
         }
     }
@@ -123,23 +126,19 @@ bool Room::hasAirVent(){
 
 //  Character status is more important that the items, except the TRAP
 char Room::getDisplay() {
-    if(hasCharacter()){
-        if(hasPlayer()){
-            return PLAYER;
-        }else if(hasDad()){
-            return DAD;
-        }else if(hasAirVent()){
-            return AIRVENT;
-        }
-    }else if(hasItem()){
-        if(itemInRoom->isTasty){
-            return CANDY;
-        }else if(itemInRoom->isStinky){
-            return DIAPER;
-        }else if(itemInRoom->isDangerous){
-            return LEGOTRAP;
-        }
-    } else {
+    if(hasPlayer()){
+        return PLAYER;
+    }else if(hasDad()){
+        return DAD;
+    }else if(hasAirVent()){
+        return AIRVENT;
+    }else if(itemInRoom->isTasty){
+        return CANDY;
+    }else if(itemInRoom->isStinky){
+        return DIAPER;
+    }else if(itemInRoom->isDangerous){
+        return LEGOTRAP;
+    }else{
         return EMPTYROOM;
     }
 }

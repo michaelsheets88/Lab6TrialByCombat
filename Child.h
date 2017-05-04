@@ -12,14 +12,16 @@
 class Child: public Character {
 private:
     static const int NUMBER_OF_ITEMS = 2;
-    InventoryItem *inventory[NUMBER_OF_ITEMS];
+    int inventory[NUMBER_OF_ITEMS];
     bool hasTrap = true;
 
 public:
     void pickUp();
-    Child(): Character(true, goodGuyName){};
-    InventoryItem getCandy();
-    InventoryItem getDiapers();
+    Child(): Character(true, goodGuyName){
+
+    };
+    int getCandy();
+    int getDiapers();
     void addCandy(int amount);
     void addDiaper(int amount);
     bool loseDiaper();

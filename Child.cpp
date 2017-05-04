@@ -4,25 +4,25 @@
 
 #include "Child.h"
 
-InventoryItem Child::getCandy(){
-    return *inventory[0];
+int Child::getCandy(){
+    return inventory[0];
 }
 
-InventoryItem Child::getDiapers() {
-    return *inventory[1];
+int Child::getDiapers() {
+    return inventory[1];
 }
 
 void Child::addCandy(int amount) {
-    inventory[0]->amount+=amount;
+    inventory[0]+=amount;
 }
 
 void Child::addDiaper(int amount) {
-    inventory[1]->amount+=amount;
+    inventory[1]+=amount;
 }
 
 bool Child::loseDiaper() {
-    if(inventory[1]->amount>0){
-        inventory[1]->amount-=1;
+    if(inventory[1]>0){
+        inventory[1]-=1;
         return true;
     } else {
         return false;

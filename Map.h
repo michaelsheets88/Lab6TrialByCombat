@@ -37,7 +37,8 @@ public:
     bool throwDiaperInto(Room* room);
     Map();                                                              //Constructor
 private:
-
+    bool ventCheck(int row, int col);
+    bool dadCheck(int row, int col);
     void handleChildHazard(Character* child, Room* newRoom);
     Room* rooms[mapRows][mapColumns];                                   //The 2D array of the rooms
     Room* findRandomEmptyRoom();                                        //Finds an random empty room for populating the map

@@ -112,15 +112,8 @@ void displayInstructions() {
 
 Map *setUpGame() {
     Map *map = new Map();
-
     if (developerOption) {
-        cout << "I am sorry, but the Developer Option has not been implemented yet" << endl;
-        //Will create map with developer option enabled to create set map
         map->printMapState();
-
-    } else {
-        cout << "Game implementation is still in process, my apologies" << endl;
-        //Will create random map as per usual
     }
     return map;
 }
@@ -174,13 +167,16 @@ int handleGameInput(Map *theMap) {
             isNotDone = true;
             break;
     }
+    if (developerOption) {
+        theMap->printMapState();
+    }
     if(isNotDone){
         return NOT_DONE;
     } else {
         if (!theMap->isPlayerAlive()){
             return LOST;
         } else {
-            return theMap->player->getCandy().amount;
+            return theMap->player->getCandy();
         }
     }
 }
@@ -252,7 +248,7 @@ void printWallMessage() {
 
 bool movePlayerSouth(Map *theMap) {
     if(theMap->canMoveTo(theMap->player->getRow()+1,theMap->player->getColumn())){
-        return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1));
+        return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow()+1,theMap->player->getColumn()));
     } else {
         printWallMessage();
         return true;
@@ -261,7 +257,7 @@ bool movePlayerSouth(Map *theMap) {
 
 bool movePlayerWest(Map *theMap) {
     if(theMap->canMoveTo(theMap->player->getRow(),theMap->player->getColumn()-1)){
-        return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1));
+        return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()-1));
     } else {
         printWallMessage();
         return true;
@@ -270,8 +266,8 @@ bool movePlayerWest(Map *theMap) {
 
 
 bool movePlayerNorth(Map *theMap) {
-    if(theMap->canMoveTo(theMap->player->getRow(),theMap->player->getColumn()+1)){
-        return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1));
+    if(theMap->canMoveTo(theMap->player->getRow()-1,theMap->player->getColumn())){
+        return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow()-1,theMap->player->getColumn()));
     } else {
         printWallMessage();
         return true;
