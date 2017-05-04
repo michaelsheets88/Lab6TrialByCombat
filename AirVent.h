@@ -6,6 +6,8 @@
 #define WUMPUS_BATS_H
 
 
+#include "Character.h"
+
 class AirVent : public Character{
 public:
     int rowToMoveTo;

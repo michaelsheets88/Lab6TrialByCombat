@@ -24,7 +24,8 @@ public:
     string name;
     Character(bool canMove, string name){};
     Character(): canMove(false), name(defaultName){};
-    void setPosition(int newRow, int newColumn);
+    int getRow();
+    int getColumn();
 };
 
 

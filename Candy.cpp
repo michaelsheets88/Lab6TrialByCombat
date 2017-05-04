@@ -4,5 +4,3 @@
 
 #include <iostream>
 #include "Candy.h"
-
-Candy::Candy(int initialAmount) : InventoryItem(initialAmount, true, false, false){}

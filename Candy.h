@@ -9,7 +9,7 @@
 
 class Candy: public InventoryItem {
 public:
-    Candy(int initialAmount);
+    Candy(int initialAmount) : InventoryItem(initialAmount, true, false, false){}
 };
 
 #endif //WUMPUS_GOLD_H

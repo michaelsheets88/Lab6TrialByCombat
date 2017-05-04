@@ -9,7 +9,7 @@
 
 class DirtyDiaper: public InventoryItem {
 public:
-    DirtyDiaper(int initialAmount);
+    DirtyDiaper(int initialAmount) :  InventoryItem(initialAmount, false, true, false) {}
 };
 
 #endif //WUMPUS_ARROW_H

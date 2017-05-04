@@ -27,7 +27,7 @@ public:
     Child* player;
     Dad* dad;
     void setTrap(Room* trapRoom);
-    bool throwDiaperInto(Room* room);
+    bool DiaperInto(Room* room);
 
     Room* getPlayerRoom();                                              //Room with player.
     Room* getDadRoom();
@@ -38,6 +38,7 @@ public:
     Room* roomAt(int row, int column);                                  //Get the pointer for a room at a certain place in the map
     bool isPlayerAlive();                                               //A boolean for the main class to check to see if the player has died
     bool isDadAlive();                                                  //A boolean for the main class to check to see if the dad has been conquered
+    bool throwDiaperInto(Room* room);
     Map();                                                              //Constructor
 private:
     bool handleChildHazard(Character* child, Room* newRoom);

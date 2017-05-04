@@ -3,33 +3,12 @@
 //
 
 #include <cstdlib>
-#include "Room.h"
 #include "Map.h"
 #include "Candy.h"
 #include "DirtyDiaper.h"
-#include "AirVent.h"
-#include "Dad.h"
 #include "Legos.h"
 
-Room* Map::getPlayerRoom() {
-    for(int r = 0; r < mapRows; r++){
-        for(int c = 0; c <mapColumns; c++){
-            if(roomAt(r, c)->hasPlayer()){
-                return roomAt(r, c);
-            }
-        }
-    }
-}
 
-Room* Map::getDadRoom() {
-    for(int r = 0; r < mapRows; r++){
-        for(int c = 0; c <mapColumns; c++){
-            if(roomAt(r, c)->hasDad()){
-                return roomAt(r, c);
-            }
-        }
-    }
-}
 
 bool Map::isDadAlive() {
     return dadAlive;
@@ -112,7 +91,7 @@ bool Map::handleChildHazard(Character* child, Room* newRoom){
     }else{
         AirVent* vent = newRoom->roomsAirVent;
         cout << "Secret air vent tunnel!" << endl;
-        moveCharacterTo(child, roomAt(vent->rowToMoveTo, vent->colToMoveTo));
+        return moveCharacterTo(child, roomAt(vent->rowToMoveTo, vent->colToMoveTo));
     }
 }
 
@@ -130,6 +109,9 @@ bool Map::moveCharacterTo(Character *mover, Room *newRoom){
         dadAttacksTheRoomHeIsEntering(newRoom);
         mover->setCurrentRoom(newRoom->getRoomRow(), newRoom->getRoomCol());
     } else if(mover->name == goodGuyName){
+        if(newRoom->getItems()->isTasty){
+            player->addCandy(newRoom->getItems()->amount);
+        } else if (newRoom->getItems()->isStinky)
         if(newRoom->hasDad() || newRoom->hasAirVent()){
             return handleChildHazard(mover, newRoom);
         }
