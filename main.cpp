@@ -238,7 +238,7 @@ void throwDiaperDialog() {
 }
 
 bool movePlayerEast(Map *theMap) {
-    if(theMap->canMoveTo(theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1))){
+    if(theMap->canMoveTo(theMap->player->getRow(),theMap->player->getColumn()+1)){
         return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1));
     } else {
         printWallMessage();
@@ -251,7 +251,7 @@ void printWallMessage() {
 }
 
 bool movePlayerSouth(Map *theMap) {
-    if(theMap->canMoveTo(theMap->roomAt(theMap->player->getRow()+1,theMap->player->getColumn()))){
+    if(theMap->canMoveTo(theMap->player->getRow()+1,theMap->player->getColumn())){
         return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1));
     } else {
         printWallMessage();
@@ -260,7 +260,7 @@ bool movePlayerSouth(Map *theMap) {
 }
 
 bool movePlayerWest(Map *theMap) {
-    if(theMap->canMoveTo(theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()-1))){
+    if(theMap->canMoveTo(theMap->player->getRow(),theMap->player->getColumn()-1)){
         return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1));
     } else {
         printWallMessage();
@@ -270,7 +270,7 @@ bool movePlayerWest(Map *theMap) {
 
 
 bool movePlayerNorth(Map *theMap) {
-    if(theMap->canMoveTo(theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1))){
+    if(theMap->canMoveTo(theMap->player->getRow(),theMap->player->getColumn()+1)){
         return theMap->moveCharacterTo(theMap->player,theMap->roomAt(theMap->player->getRow(),theMap->player->getColumn()+1));
     } else {
         printWallMessage();
