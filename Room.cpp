@@ -39,8 +39,12 @@ void Room::setItem(InventoryItem *roomItem) {
     itemInRoom = roomItem;
 }
 
+/**
+ * Simply checks if the room has any characters
+ * @return
+ */
 bool Room::hasCharacter() {
-    return currentCharacters.size() > 1;    //steve....
+    return currentCharacters.size() > 0;
 }
 
 /**
@@ -84,16 +88,19 @@ bool Room::moveCharacterFrom(Character *mover) {
 
 /**
  * Return the items in the room.
+ * and sets the room to a zero qty
  * @return
  */
 InventoryItem* Room::getItems() {
-
-    //TODO  Ian, keep an eye on this
     InventoryItem* copy = itemInRoom;
     itemInRoom = new InventoryItem();
     return copy;
 }
 
+/**
+ * DOES THE ROOM HAVE A PLAYER?
+ * @return True if the room has a player in it. I feel like im repeating myself.
+ */
 bool Room::hasPlayer() {
     bool found = false;
     for(int i = 0; i < currentCharacters.size(); i++){
@@ -104,6 +111,10 @@ bool Room::hasPlayer() {
     return found;
 }
 
+/**
+ * Does the room have a dad.
+ * @return
+ */
 bool Room::hasDad() {
     bool found = false;
     for(int i = 0; i < currentCharacters.size(); i++){
@@ -114,6 +125,10 @@ bool Room::hasDad() {
     return found;
 }
 
+/**
+ * Does the room have a vent
+ * @return
+ */
 bool Room::hasAirVent(){
     bool found = false;
     for(int i = 0; i < currentCharacters.size(); i++){
@@ -143,6 +158,10 @@ char Room::getDisplay() {
     }
 }
 
+/**
+ * Does this room have a set trap in it?
+ * @return
+ */
 bool Room::hasSetTrap() {
     return itemInRoom->isDangerous;
 }

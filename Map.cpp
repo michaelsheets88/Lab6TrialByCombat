@@ -10,18 +10,36 @@
 #include "DirtyDiaper.h"
 #include "Legos.h"
 
+/**
+ * Checks if the proposed room is within the map boundaries.
+ * Null pointer and segmentation fault killer
+ * @param row The row.  I named the variables so we could take a solid guess at what it is.
+ * @param col The column.
+ * @return  True, if we can ... move... to ... the room.
+ */
 bool Map::canMoveTo(int row, int col) {
     return !(row >= mapRows || row < 0 || col < 0 || col >= mapColumns);
 }
 
+/**
+ * Checks if dad is alive
+ * @return
+ */
 bool Map::isDadAlive() {
     return dadAlive;
 }
 
+/**
+ * Checks if the player is alive
+ */
 bool Map::isPlayerAlive() {
     return playerAlive;
 }
 
+/**
+ * We need to find an empty room a lot.  FIND AN EMPTY RANDOM ROOM.
+ * @return
+ */
 Room* Map::findRandomEmptyRoom() {
     int r = rand() % mapRows;
     int c = rand() % mapColumns;
@@ -32,6 +50,9 @@ Room* Map::findRandomEmptyRoom() {
     return roomAt(r, c);
 }
 
+/**
+ * CANDY EVERYWHERE
+ */
 void Map::populateCandy() {
     // Add 10 candy to empty rooms
     for(int g = 0; g < 20; g++){
@@ -39,6 +60,9 @@ void Map::populateCandy() {
     }
 }
 
+/**
+ * Dirty diapers that can be found around the house. (YUCK)
+ */
 void Map::populateDiapers() {
     // Add 10 arrows to empty rooms
     for(int a = 0; a < maxDiapers; a++){
@@ -51,8 +75,6 @@ void Map::populateVents() {
     for(int v = 0; v < maxVents; v++){
         AirVent *vent = new AirVent(0, 0);
         Room *room = findRandomEmptyRoom();
-        int ventRow = room->getRoomRow();
-        int ventCol = room->getRoomCol();
         moveCharacterTo(vent, room);
         room = findRandomEmptyRoom();
         vent->colToMoveTo = room->getRoomCol();
@@ -60,14 +82,26 @@ void Map::populateVents() {
     }
 }
 
+/**
+ * moves the player into an empty room
+ */
 void Map::populatePlayer() {
     moveCharacterTo(player, findRandomEmptyRoom());
 }
 
+/**
+ * Moves the dad into an empty room.
+ */
 void Map::populateDad() {
     moveCharacterTo(dad, findRandomEmptyRoom());
 }
 
+/**
+ * Returns the room at a known location
+ * @param row
+ * @param column
+ * @return The room
+ */
 Room* Map::roomAt(int row, int column) {
     return rooms[row][column];
 }
@@ -107,6 +141,11 @@ void Map::handleChildHazard(Character* child, Room* newRoom){
     }
 }
 
+/**
+ * Safe move for the player, just handle the logic for picking up inventory items and such
+ * @param child         Our hero
+ * @param newRoom       Where the hero is going
+ */
 void Map::moveChildSafely(Character* child, Room* newRoom){
     InventoryItem *item = newRoom->getItems();
     if(item->isTasty){
@@ -159,6 +198,12 @@ void Map::printMapState() {
     cout << BORDER << endl;
 }
 
+/**
+ * Checks the adjacent rooms for player.
+ * @param row The center room's row number
+ * @param col The center room's column number
+ * @return True if they are near.
+ */
 bool Map::playerCheck(int row, int col) {
     if((row+1 >= 0 && row+1 < mapRows) && (roomAt(row + 1, col)->hasPlayer())){
         return true;
@@ -172,6 +217,12 @@ bool Map::playerCheck(int row, int col) {
     return (col - 1 >= 0 && col - 1 < mapColumns) && (roomAt(row, col - 1)->hasPlayer());
 }
 
+/**
+ * Checks the adjacent rooms for vents.
+ * @param row The center room's row number
+ * @param col The center room's column number
+ * @return True if they are near.
+ */
 bool Map::ventCheck(int row, int col) {
     if((row+1 >= 0 && row+1 < mapRows) && (roomAt(row + 1, col)->hasAirVent())){
         return true;
@@ -185,6 +236,12 @@ bool Map::ventCheck(int row, int col) {
     return (col - 1 >= 0 && col - 1 < mapColumns) && (roomAt(row, col - 1)->hasAirVent());
 }
 
+/**
+ * Checks the adjacent rooms for dad.
+ * @param row The center room's row number
+ * @param col The center room's column number
+ * @return True if they are near.
+ */
 bool Map::dadCheck(int row, int col) {
     if((row+1 >= 0 && row+1 < mapRows) && (roomAt(row + 1, col)->hasDad())){
         return true;
@@ -198,6 +255,13 @@ bool Map::dadCheck(int row, int col) {
     return (col - 1 >= 0 && col - 1 < mapColumns) && (roomAt(row, col - 1)->hasDad());
 }
 
+
+/**
+ * Kind of a chunky string builder.  No crazy logic here, but needs some real estate to make a pretty string.
+ * @param currentRoom   The center room, we will check the adjacent rooms from
+ * @param player        The player.  The child.  The hero.
+ * @return  A wonderfully formatted string
+ */
 string Map::getRoomStatus(Room *currentRoom, Child *player) {
     string status = "You enter a room and hear:";
     bool dadNear = false;
@@ -226,6 +290,11 @@ string Map::getRoomStatus(Room *currentRoom, Child *player) {
     return status;
 }
 
+/**
+ * Yeah, it is disgusting.
+ * @param room  The room being attacked
+ * @return  True if the dad is killed
+ */
 bool Map::throwDiaperInto(Room* room){
     if(room->hasDad()){
         dadAlive = false;
@@ -256,10 +325,17 @@ Map::Map() {
     playerAlive = true;
 }
 
+/**
+ * Kinda like Home Alone.
+ * @param trapRoom  The room to be sprinkled with legos
+ */
 void Map::setTrap(Room* trapRoom) {
     trapRoom->setItem(new Legos());
 }
 
+/**
+ * An auto-randomized movement for the AI dad-Bot
+ */
 void Map::moveDad() {
     if(isDadAlive() and dad->canMove){
         switch(rand() % 5){
