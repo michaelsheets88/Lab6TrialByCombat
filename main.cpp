@@ -177,12 +177,13 @@ int handleGameInput(Map *theMap) {
 }
 
 void dadCanMoveCheck(Map* map){
-    if(map->playerCheck(map->dad->getRow(), map->dad->getColumn())){
-        map->dad->canMove = true;
-    }
     if(map->isDadAlive() && map->dad->canMove){
         map->moveDad();
     }
+    if(map->playerCheck(map->dad->getRow(), map->dad->getColumn())){
+        map->dad->canMove = true;
+    }
+
 }
 
 int endOfTurnCheck(Map* theMap, bool isNotDone){

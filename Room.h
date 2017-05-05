@@ -1,5 +1,6 @@
 //
 // Created by sheetsmj on 4/13/2017.
+// Software Dev. 3 Lab 6
 //
 
 #ifndef WUMPUS_ROOM_H
@@ -19,6 +20,7 @@ const static char DIAPER = 'S';
 const static char CANDY = 'C';
 const static char LEGOTRAP = 'X';
 const static char EMPTYROOM = '*';
+const static string HELP_MENU = "D - Dad\nP - Player\nA - Airvent\nS - (stinky) Diaper\nC - Candy\nX - Lego Trap\n* - Empty Room";
 
 class Room {
 public:

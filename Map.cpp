@@ -1,5 +1,6 @@
 //
 // Created by sheetsmj on 4/13/2017.
+// Software Dev. 3 Lab 6
 //
 
 #include <cstdlib>
@@ -147,7 +148,7 @@ bool Map::moveCharacterTo(Character *mover, Room *newRoom){
  * Prints out the map and locations of stuff
  */
 void Map::printMapState() {
-    cout << BORDER << endl;
+    cout << HELP_MENU << endl << BORDER << endl;
     for(int r = 0; r < mapRows; r++){
         cout << EDGE;
         for(int c = 0; c < mapColumns; c++){
@@ -260,7 +261,7 @@ void Map::setTrap(Room* trapRoom) {
 }
 
 void Map::moveDad() {
-    if(isDadAlive()){
+    if(isDadAlive() and dad->canMove){
         switch(rand() % 5){
             case 1:
                 if(canMoveTo(dad->getRow()+1, dad->getColumn())){
